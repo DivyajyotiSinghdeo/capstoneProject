@@ -11,11 +11,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-
+@RestController
+@RequestMapping("/api/customer")
 public class CustomerController {
+
+    @Autowired
+    private CustomerService customerService;
 
     @GetMapping("/api/customer/cargo-status")
     public ResponseEntity<CargoStatusResponse> viewCargoStatus(@RequestParam Long cargoId) {
+        CargoStatusResponse cargoStatusResponse=customerService.viewCargoStatus(cargoId);
+        if(cargoStatusResponse!=null){
+            return new ResponseEntity<>(cargoStatusResponse, HttpStatus.OK);
+        }
+        else{
+            return new ResponseEntity<>(cargoStatusResponse, HttpStatus.NOT_FOUND);
+        }
 
         // get cargo status and return it with status code 200
 

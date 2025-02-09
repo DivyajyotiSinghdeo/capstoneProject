@@ -8,20 +8,21 @@ import javax.persistence.*;
 public class Cargo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    String content;
-    String size;
-    String status;
+    private Long id;
+    private String content;
+    private String size;
+    private String status;
 
     @ManyToOne
-    //@JoinColumn(name="business_id")
-    @JsonBackReference
+    @JoinColumn(name="business_id")
     private Business business;
 
     @ManyToOne
-    //@JoinColumn(name="business_id")
-    @JsonBackReference
+    @JoinColumn(name="driver_id")
     private Driver driver;
+
+    public Cargo() {
+    }
 
     public Cargo(Long id, String content, String size, String status) {
         this.id = id;

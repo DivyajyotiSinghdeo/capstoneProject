@@ -13,26 +13,39 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import java.util.List;
 
+@RestController
 public class BusinessController {
+
+    @Autowired
+    private DriverService driverService;
+
+    @Autowired
+    private CargoService cargoService;
 
     @PostMapping("/api/business/cargo")
     public ResponseEntity<Cargo> addCargo(@RequestBody Cargo cargo) {
-        // add cargo  and return the added cargo with status code 200
+        return new ResponseEntity<>(cargoService.addCargo(cargo),HttpStatus.OK);
+        
     }
 
     @GetMapping("/api/business/drivers")
-    public ResponseEntity<List<Driver>> getAllDrivers() {{
-        // return list of drivers
+    public ResponseEntity<List<Driver>> getAllDrivers() {
+        return new ResponseEntity<>(driverService.getAllDrivers(),HttpStatus.OK);
     }
 
     @GetMapping("/api/business/cargo")
     public ResponseEntity<List<Cargo>> viewAllCargos() {
-        // return all cargos with status code 200
+        return new ResponseEntity<>(cargoService.viewAllCargos(),HttpStatus.OK);
     }
 
-    @@PostMapping("/api/business/assign-cargo")
+    @PostMapping("/api/business/assign-cargo")
     public ResponseEntity<String> assignCargoToDriver(@RequestParam Long cargoId, @RequestParam Long driverId) {
-        // assign cargo to a driver
-        // if assignment is sucess return with sucess message
+        boolean isAssigned = cargoService.assignCargoToDriver(cargoId, driverId);
+        if (isAssigned) {
+            return new ResponseEntity<>("{\"message\": \"Cargo assigned successfully\"}", HttpStatus.OK);
+        } 
+        else {
+            return new ResponseEntity<>("{\"message\": \"Failed to assign cargo\"}", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }

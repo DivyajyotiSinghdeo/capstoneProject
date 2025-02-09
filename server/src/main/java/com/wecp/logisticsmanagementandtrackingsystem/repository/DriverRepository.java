@@ -5,8 +5,8 @@ import com.wecp.logisticsmanagementandtrackingsystem.entity.Driver;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-
-public interface DriverRepository  {
+@Repository
+public interface DriverRepository extends JpaRepository<Driver,Long> {
     // extend jpa repository and add custom methods if needed
 }
 

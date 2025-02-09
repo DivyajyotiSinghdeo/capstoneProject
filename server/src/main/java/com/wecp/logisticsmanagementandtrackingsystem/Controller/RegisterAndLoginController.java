@@ -32,6 +32,7 @@ public class RegisterAndLoginController {
         // register user in user repository by user service
         // after register in user repository then based on provided user role, register user in business, customer or driver repository
         // return with registered user 200 OK
+        return null;
 
     }
 
@@ -40,6 +41,7 @@ public class RegisterAndLoginController {
         // implement login logic here
         // return valid jwt token in loginResponse
         // return 401 unauthorized if login failed
+        return null;
     }
 
 

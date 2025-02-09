@@ -5,10 +5,13 @@ import javax.persistence.*;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    String name;
-    String email;
-    
+    private Long id;
+    private String name;
+    private String email;
+
+
+    public Customer() {
+    }
     public Customer(Long id, String name, String email) {
         this.id = id;
         this.name = name;

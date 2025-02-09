@@ -6,8 +6,9 @@ import com.wecp.logisticsmanagementandtrackingsystem.repository.BusinessReposito
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
+@Service
 public class BusinessService {
-    // implement service logic here
-   
+    
+   @Autowired
+   private BusinessRepository businessRepository;
 }
