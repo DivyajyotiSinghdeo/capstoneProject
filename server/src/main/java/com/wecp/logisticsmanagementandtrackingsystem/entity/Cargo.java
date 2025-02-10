@@ -1,74 +1,34 @@
 package com.wecp.logisticsmanagementandtrackingsystem.entity;
-
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name="cargos")
 public class Cargo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String content;
     private String size;
-    private String status; // Status can be 'PENDING', 'IN_TRANSIT', 'DELIVERED'
-    private String pickupAddress;
-    private String deliveryAddress;
-    private String estimatedDeliveryDate;
-    private String customerName;
-    private String senderName;
-    private boolean assigned; // New field to track assignment status
- 
-    public boolean isAssigned() {
-        return assigned;
-    }
- 
-    public void setAssigned(boolean assigned) {
-        this.assigned = assigned;
-    }
-
-    public String getPickupAddress() {
-        return pickupAddress;
-    }
-
-    public void setPickupAddress(String pickupAddress) {
-        this.pickupAddress = pickupAddress;
-    }
-
-    public String getSenderName() {
-        return senderName;
-    }
-
-    public void setSenderName(String senderName) {
-        this.senderName = senderName;
-    }
+    private String status;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "business_id")
+    @JoinColumn(name="business_id")
     private Business business;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "driver_id")
+    @JoinColumn(name="driver_id")
     private Driver driver;
 
-    public String getDeliveryAddress() {
-        return deliveryAddress;
+    public Cargo() {
     }
 
-    public void setDeliveryAddress(String deliveryAddress) {
-        this.deliveryAddress = deliveryAddress;
-    }
-
-    public String getEstimatedDeliveryDate() {
-        return estimatedDeliveryDate;
-    }
-
-    public void setEstimatedDeliveryDate(String estimatedDeliveryDate) {
-        this.estimatedDeliveryDate = estimatedDeliveryDate;
+    public Cargo(Long id, String content, String size, String status) {
+        this.id = id;
+        this.content = content;
+        this.size = size;
+        this.status = status;
     }
 
     public Long getId() {
@@ -118,13 +78,4 @@ public class Cargo {
     public void setDriver(Driver driver) {
         this.driver = driver;
     }
-
-    public String getCustomerName() {
-        return customerName;
-    }
-
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
-    }
-
 }

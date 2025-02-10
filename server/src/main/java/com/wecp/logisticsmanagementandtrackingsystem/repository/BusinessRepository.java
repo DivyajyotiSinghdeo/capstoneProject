@@ -10,8 +10,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface BusinessRepository extends JpaRepository<Business,Long> {
-    // extend jpa repository and add custom methods if needed
-    // Optional<Business> findByUsername(String username);
-
-    Business findByName(String name);
+    
 }

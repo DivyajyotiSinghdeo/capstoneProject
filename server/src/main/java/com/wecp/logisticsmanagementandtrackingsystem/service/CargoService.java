@@ -3,9 +3,7 @@ package com.wecp.logisticsmanagementandtrackingsystem.service;
 import com.wecp.logisticsmanagementandtrackingsystem.entity.Business;
 import com.wecp.logisticsmanagementandtrackingsystem.entity.Cargo;
 import com.wecp.logisticsmanagementandtrackingsystem.entity.Driver;
-import com.wecp.logisticsmanagementandtrackingsystem.repository.BusinessRepository;
 import com.wecp.logisticsmanagementandtrackingsystem.repository.CargoRepository;
-import com.wecp.logisticsmanagementandtrackingsystem.repository.CustomerRepository;
 import com.wecp.logisticsmanagementandtrackingsystem.repository.DriverRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -24,21 +22,7 @@ public class CargoService {
     @Autowired
     private DriverRepository driverRepository;
 
-    @Autowired
-    private BusinessRepository businessRepository;
-
-    @Autowired
-    private CustomerRepository customerRepository;
-
     public Cargo addCargo(Cargo cargo) {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if (authentication != null && authentication.isAuthenticated()) {
-            String username = authentication.getName();
-            Business business = businessRepository.findByName(username);
-            if (business != null) {
-                cargo.setBusiness(business);
-            }
-        }
         return cargoRepository.save(cargo);
     }
 
@@ -54,7 +38,6 @@ public class CargoService {
                 .orElseThrow(() -> new EntityNotFoundException("Driver not found with id: " + driverId));
 
         cargo.setDriver(driver);
-        cargo.setAssigned(true);
         cargoRepository.save(cargo);
         return true;
     }

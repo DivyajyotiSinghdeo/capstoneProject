@@ -8,24 +8,18 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name="drivers")
 public class Driver {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
     private String email;
-
-    // Other driver-related properties
+    private Long userId; 
 
     @OneToMany(mappedBy = "driver")
     @JsonIgnore
     private List<Cargo> assignedCargos;
-
-    @OneToOne
-    @JoinColumn(name = "user_id")
-    private User user;
 
     public Long getId() {
         return id;
@@ -51,19 +45,21 @@ public class Driver {
         this.email = email;
     }
 
-    public List<Cargo> getAssignedCargos() {
-        return assignedCargos;
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public void setAssignedCargos(List<Cargo> assignedCargos) {
         this.assignedCargos = assignedCargos;
     }
 
-    public User getUser() {
-        return user;
+    public List<Cargo> getAssignedCargos() {
+        return assignedCargos;
     }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
+
 }

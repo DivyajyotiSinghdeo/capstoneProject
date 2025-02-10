@@ -10,8 +10,8 @@ public interface UserRepository extends JpaRepository<User,Long> {
     // extend jpa repository and add custom methods if needed
     User findByUsername(String username);
 
-    public boolean existsByEmail(String email);
-    public boolean existsByUsername(String username);
+    // public boolean existsByEmail(String email);
+    // public boolean existsByUsername(String username);
 
 
 }

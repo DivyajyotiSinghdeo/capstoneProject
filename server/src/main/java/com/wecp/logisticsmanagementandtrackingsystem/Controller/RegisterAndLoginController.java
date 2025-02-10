@@ -1,6 +1,4 @@
 package com.wecp.logisticsmanagementandtrackingsystem.Controller;
-
-
 import com.wecp.logisticsmanagementandtrackingsystem.dto.LoginRequest;
 import com.wecp.logisticsmanagementandtrackingsystem.dto.LoginResponse;
 import com.wecp.logisticsmanagementandtrackingsystem.entity.Business;
@@ -49,29 +47,27 @@ public class RegisterAndLoginController {
     private JwtUtil jwtUtil;
 
     @PostMapping("/register")
-    public ResponseEntity<?> registerUser(@RequestBody User user)throws Exception {
-        User registeredUser = userService.registerUser(user);
-        if (registeredUser.getRole().equals("BUSINESS")) {
-            Business business = new Business();
-            business.setName(registeredUser.getUsername());
-            business.setEmail(user.getEmail());
-            businessService.registerBusiness(business);
-            return ResponseEntity.ok(business);
-        } else if (registeredUser.getRole().equals("CUSTOMER")) {
-            Customer customer = new Customer();
-            customer.setName(registeredUser.getUsername());
-            customer.setEmail(user.getEmail());
-            return ResponseEntity.ok(customerService.createCustomer(customer));
-        } else if (registeredUser.getRole().equals("DRIVER")){
-            Driver driver = new Driver();
-            driver.setName(registeredUser.getUsername());
-            driver.setEmail(user.getEmail());
-            driver.setUser(user);
-            return ResponseEntity.ok(driverService.createDriver(driver));
-        }
-        return ResponseEntity.ok().body("User alreay exists! Please try another .");
-        
+public ResponseEntity<?> registerUser(@RequestBody User user) throws Exception {
+    User registeredUser = userService.registerUser(user);
+    if (registeredUser.getRole().equals("BUSINESS")) {
+        Business business = new Business();
+        business.setName(registeredUser.getUsername());
+        business.setEmail(user.getEmail());
+        businessService.saveBusiness(business);
+        return ResponseEntity.ok(business);
+    } else if (registeredUser.getRole().equals("CUSTOMER")) {
+        Customer customer = new Customer();
+        customer.setName(registeredUser.getUsername());
+        customer.setEmail(user.getEmail());
+        return ResponseEntity.ok(customerService.createCustomer(customer));
+    } else if (registeredUser.getRole().equals("DRIVER")) {
+        Driver driver = new Driver();
+        driver.setName(registeredUser.getUsername());
+        driver.setEmail(user.getEmail());
+        return ResponseEntity.ok(driverService.createDriver(driver));
     }
+    return ResponseEntity.ok().body("User already exists! Please try another.");
+}
 
     @PostMapping("/login")
     public ResponseEntity<LoginResponse> loginUser(@RequestBody LoginRequest loginRequest) {

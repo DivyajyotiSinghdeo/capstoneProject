@@ -13,6 +13,7 @@ public interface CargoRepository extends JpaRepository<Cargo,Long> {
     //List<Cargo> findAllByDriverId(Long driverId);
     // extend jpa repository to add custom query methods if needed
 
+    List<Cargo> findByBusinessId(Long businessId);
     List<Cargo> findByDriverId(Long driverId);
 
 }

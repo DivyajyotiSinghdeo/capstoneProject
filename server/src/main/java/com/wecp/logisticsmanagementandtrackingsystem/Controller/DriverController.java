@@ -22,10 +22,6 @@ public class DriverController {
         List<Cargo> assignedCargos = driverService.viewDriverCargos(driverId);
         return ResponseEntity.ok(assignedCargos);
     }
-    @GetMapping("/getDriverId")
-    public Long getDriverId(@RequestParam Long userId) {
-        return driverService.getDriverIdByUserId(userId);
-    }
 
     @PutMapping("/update-cargo-status")
     public ResponseEntity<String> updateCargoStatus(@RequestParam Long cargoId, @RequestParam String newStatus) {

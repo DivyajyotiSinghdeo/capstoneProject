@@ -9,15 +9,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class BusinessService {
 
-
     @Autowired
     private BusinessRepository businessRepository;
 
-    public Business registerBusiness(Business business) {
+    public Business saveBusiness(Business business) {
         return businessRepository.save(business);
     }
-
-    public Business getBusinessByUsername(String username) {
-        return businessRepository.findByName(username);
-    }
+    
 }

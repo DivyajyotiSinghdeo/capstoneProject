@@ -68,7 +68,6 @@ public class JwtUtil {
         return claims.getSubject();
     }
 
-
     public boolean isTokenExpired(String token) {
         Date expirationDate = Jwts.parser()
                 .setSigningKey(secret)

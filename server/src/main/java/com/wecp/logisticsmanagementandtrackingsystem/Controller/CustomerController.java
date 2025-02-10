@@ -29,15 +29,5 @@ public class CustomerController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
     }
-    @GetMapping("/cargo-details")
-    public ResponseEntity<Cargo> getCargo(@RequestParam Long cargoId) {
-        Cargo cargo = customerService.getCargo(cargoId);
-
-        if (cargo != null) {
-            return ResponseEntity.ok(cargo);
-        } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-        }
-    }
 
 }

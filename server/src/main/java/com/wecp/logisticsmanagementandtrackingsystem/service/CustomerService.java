@@ -23,24 +23,9 @@ public class CustomerService {
     }
 
     public CargoStatusResponse viewCargoStatus(Long cargoId) {
-        Cargo cargo = cargoRepository.findById(cargoId)
-                .orElse(null);
-
+        Cargo cargo = cargoRepository.findById(cargoId).orElse(null);
         if (cargo != null) {
-            // Create a response object with cargo status details
             return new CargoStatusResponse(cargo.getId(), cargo.getStatus());
-        } else {
-            return null;
-        }
-    }
-
-    public Cargo getCargo(Long cargoId) {
-        Cargo cargo = cargoRepository.findById(cargoId)
-                .orElse(null);
-
-        if (cargo != null) {
-            // Create a response object with cargo status details
-            return cargo;
         } else {
             return null;
         }
