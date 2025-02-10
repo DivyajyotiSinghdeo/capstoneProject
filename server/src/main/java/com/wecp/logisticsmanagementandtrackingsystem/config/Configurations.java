@@ -1,3 +1,4 @@
+
 package com.wecp.logisticsmanagementandtrackingsystem.config;
 
 import org.springframework.context.annotation.Bean;

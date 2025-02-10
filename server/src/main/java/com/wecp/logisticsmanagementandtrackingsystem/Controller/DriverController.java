@@ -17,20 +17,27 @@ public class DriverController {
     @Autowired
     private DriverService driverService;
 
-    @GetMapping("/api/driver/cargo")
+    @GetMapping("/cargo")
     public ResponseEntity<List<Cargo>> viewAssignedCargos(@RequestParam Long driverId) {
-        return new ResponseEntity<>(driverService.viewDriverCargos(driverId),HttpStatus.OK);
+        List<Cargo> assignedCargos = driverService.viewDriverCargos(driverId);
+        return ResponseEntity.ok(assignedCargos);
+    }
+    @GetMapping("/getDriverId")
+    public Long getDriverId(@RequestParam Long userId) {
+        return driverService.getDriverIdByUserId(userId);
     }
 
     @PutMapping("/update-cargo-status")
     public ResponseEntity<String> updateCargoStatus(@RequestParam Long cargoId, @RequestParam String newStatus) {
-        boolean updateStatus = driverService.updateCargoStatus(cargoId, newStatus);
-        if (updateStatus) {
-            return new ResponseEntity<>("{\"message\": \"Cargo status updated successfully.\"}", HttpStatus.OK);
-        } 
-        else {
-            return new ResponseEntity<>("{\"message\": \"Failed to update cargo status.\"}", HttpStatus.INTERNAL_SERVER_ERROR);
+        boolean updateSuccess = driverService.updateCargoStatus(cargoId, newStatus);
+
+        if (updateSuccess) {
+            
+            return ResponseEntity.ok().body("{\"message\": \"Cargo status updated successfully.\"}");
+        } else {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to update cargo status.");
         }
     }
-    }
 
+
+}

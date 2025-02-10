@@ -4,6 +4,8 @@ import com.wecp.logisticsmanagementandtrackingsystem.entity.Cargo;
 import com.wecp.logisticsmanagementandtrackingsystem.entity.Driver;
 import com.wecp.logisticsmanagementandtrackingsystem.repository.CargoRepository;
 import com.wecp.logisticsmanagementandtrackingsystem.repository.DriverRepository;
+import com.wecp.logisticsmanagementandtrackingsystem.repository.UserRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,36 +14,47 @@ import java.util.List;
 
 @Service
 public class DriverService {
+
     @Autowired
     private DriverRepository driverRepository;
 
     @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
     private CargoRepository cargoRepository;
 
-    public Driver createDriver(Driver driver){
+    public Driver createDriver(Driver driver) {
         return driverRepository.save(driver);
     }
+    public Long getDriverIdByUserId(Long userId) {
+        Driver driver = driverRepository.findByUserId(userId);
+        return driver != null ? driver.getId() : null;
+    }
 
-    public List<Driver> getAllDrivers(){
+    public List<Driver> getAllDrivers() {
         return driverRepository.findAll();
     }
 
-    public List<Cargo> viewDriverCargos(Long driverId){
-        Driver driver = driverRepository.findById(driverId).orElse(null);
-        if (driver == null) {
-            throw new EntityNotFoundException("Driver not found with ID: " + driverId);
-        }
-        return driver.getAssignedCargos();
+    public List<Cargo> viewDriverCargos(Long driverId) {
+        return cargoRepository.findByDriverId(driverId);
     }
 
-    public boolean updateCargoStatus(Long cargoId, String newStatus){
-        Cargo cargo = cargoRepository.findById(cargoId).orElse(null);
-        if (cargo == null) {
-            return false; 
-        }
+    public boolean updateCargoStatus(Long cargoId, String newStatus) {
+        Cargo cargo = cargoRepository.findById(cargoId)
+                .orElseThrow(
+                    () -> new EntityNotFoundException("Cargo not found with id: " + cargoId));
+
         cargo.setStatus(newStatus);
-        cargoRepository.save(cargo);
-        return true;
+        try {
+            cargoRepository.save(cargo);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
+
+
 
 }

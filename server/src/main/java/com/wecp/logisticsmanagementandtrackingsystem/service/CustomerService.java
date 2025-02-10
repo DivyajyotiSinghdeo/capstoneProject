@@ -11,22 +11,38 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CustomerService {
-    @Autowired
-    private CustomerRepository customerRepository;
 
     @Autowired
     private CargoRepository cargoRepository;
 
+    @Autowired
+    private CustomerRepository customerRepository;
 
-    public Customer createCustomer(Customer customer){
+    public Customer createCustomer(Customer customer) {
         return customerRepository.save(customer);
     }
 
-    public CargoStatusResponse viewCargoStatus(Long cargoId){
-        Cargo cargo = cargoRepository.findById(cargoId).orElse(null);
-        if (cargo == null) {
+    public CargoStatusResponse viewCargoStatus(Long cargoId) {
+        Cargo cargo = cargoRepository.findById(cargoId)
+                .orElse(null);
+
+        if (cargo != null) {
+            // Create a response object with cargo status details
+            return new CargoStatusResponse(cargo.getId(), cargo.getStatus());
+        } else {
             return null;
         }
-        return new CargoStatusResponse(cargo.getId(), cargo.getStatus());
+    }
+
+    public Cargo getCargo(Long cargoId) {
+        Cargo cargo = cargoRepository.findById(cargoId)
+                .orElse(null);
+
+        if (cargo != null) {
+            // Create a response object with cargo status details
+            return cargo;
+        } else {
+            return null;
+        }
     }
 }

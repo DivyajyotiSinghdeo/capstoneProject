@@ -1,25 +1,27 @@
 package com.wecp.logisticsmanagementandtrackingsystem.entity;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name="businesses")
 public class Business {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-   
     private String name;
     private String email;
+
 
     @OneToMany(mappedBy = "business")
     @JsonIgnore
     private List<Cargo> cargos;
+    
 
     public Long getId() {
         return id;
@@ -52,18 +54,4 @@ public class Business {
     public void setCargos(List<Cargo> cargos) {
         this.cargos = cargos;
     }
-
-    public Business() {
-    }
-
-    public Business(Long id, String name, String email, List<Cargo> cargos) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.cargos = cargos;
-    }
-
-    
-
-
 }
