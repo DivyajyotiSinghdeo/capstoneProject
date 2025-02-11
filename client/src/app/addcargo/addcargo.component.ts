@@ -10,5 +10,7 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './addcargo.component.html',
   styleUrls: ['./addcargo.component.scss']
 })
-export class AddcargoComponent {}
+export class AddcargoComponent {
+  itemForm!:FormGroup;
+}
  //todo: Complete missing code.. 
