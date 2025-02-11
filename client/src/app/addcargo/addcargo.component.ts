@@ -12,5 +12,6 @@ import { AuthService } from '../../services/auth.service';
 })
 export class AddcargoComponent {
   itemForm!:FormGroup;
+  
 }
  //todo: Complete missing code.. 

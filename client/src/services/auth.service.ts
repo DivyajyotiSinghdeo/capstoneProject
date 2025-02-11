@@ -12,11 +12,9 @@ export class AuthService {
 
   constructor() {}
 
-  // Method to save token received from login
   saveToken(token: string) {
     this.token = token;
     this.isLoggedIn = true;
-    // Optionally, you can save the token to local storage or a cookie for persistence
     localStorage.setItem('token', token);
   }
    SetRole(role:any)
@@ -43,7 +41,6 @@ export class AuthService {
     return localStorage.getItem('id');
   }
   
-  // Method to retrieve login status
   get getLoginStatus(): boolean {
   
       return !!localStorage.getItem('token');
