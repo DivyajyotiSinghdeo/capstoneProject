@@ -56,7 +56,10 @@ export class AuthService {
      this.token=null;
      this.isLoggedIn=false
    }
+<<<<<<< HEAD
 
   
   
+=======
+>>>>>>> 740b8d87bffaf2c1c57d30cdc4d5f56e7738f561
 }

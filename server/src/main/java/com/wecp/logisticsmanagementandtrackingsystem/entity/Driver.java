@@ -15,17 +15,23 @@ public class Driver {
     private Long id;
     private String name;
     private String email;
+<<<<<<< HEAD
 
     @OneToOne
     @JoinColumn(name="user_id")
+=======
+>>>>>>> 740b8d87bffaf2c1c57d30cdc4d5f56e7738f561
     private Long userId; 
 
     @OneToMany(mappedBy = "driver")
     @JsonIgnore
     private List<Cargo> assignedCargos;
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 740b8d87bffaf2c1c57d30cdc4d5f56e7738f561
     public Long getId() {
         return id;
     }

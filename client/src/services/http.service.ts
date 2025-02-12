@@ -102,8 +102,11 @@ export class HttpService {
     return this.http.post(this.serverName+'/api/register',details,{headers:headers});
   }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 740b8d87bffaf2c1c57d30cdc4d5f56e7738f561
   // registerUser(details:any):Observable<any> {
   //   console.log("Inside the Service call");
   //   return this.http.post(this.serverName+'/api/register',details);

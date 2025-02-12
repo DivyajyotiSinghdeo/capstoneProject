@@ -10,6 +10,7 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './addcargo.component.html',
   styleUrls: ['./addcargo.component.scss']
 })
+<<<<<<< HEAD
 export class AddcargoComponent implements OnInit{
   itemForm!:FormGroup;
   formModel:any={status:null};
@@ -78,3 +79,10 @@ onSubmit() {
   
 }
 }
+=======
+export class AddcargoComponent {
+  itemForm!:FormGroup;
+  
+}
+ //todo: Complete missing code.. 
+>>>>>>> 740b8d87bffaf2c1c57d30cdc4d5f56e7738f561

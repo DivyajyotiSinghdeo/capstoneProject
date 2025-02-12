@@ -15,8 +15,11 @@ import { DashbaordComponent } from './dashbaord/dashbaord.component';
 import { AddcargoComponent } from './addcargo/addcargo.component';
 import { AssginCargoComponent } from './assgin-cargo/assgin-cargo.component';
 import { ViewcargostatusComponent } from './viewcargostatus/viewcargostatus.component';
+<<<<<<< HEAD
 import { AssignShipmentComponent } from './assignShipment/assign-shipment/assign-shipment.component';
 import { FooterComponent } from './footer/footer/footer.component';
+=======
+>>>>>>> 740b8d87bffaf2c1c57d30cdc4d5f56e7738f561
 
 @NgModule({
   declarations: [
@@ -26,9 +29,13 @@ import { FooterComponent } from './footer/footer/footer.component';
       DashbaordComponent,
       AddcargoComponent,
       AssginCargoComponent,
+<<<<<<< HEAD
       ViewcargostatusComponent,
       AssignShipmentComponent,
       FooterComponent
+=======
+      ViewcargostatusComponent
+>>>>>>> 740b8d87bffaf2c1c57d30cdc4d5f56e7738f561
   ],
   imports: [
     BrowserModule,

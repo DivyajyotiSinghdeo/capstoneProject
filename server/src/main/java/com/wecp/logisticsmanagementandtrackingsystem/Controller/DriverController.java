@@ -23,11 +23,14 @@ public class DriverController {
         return ResponseEntity.ok(assignedCargos);
     }
 
+<<<<<<< HEAD
     @GetMapping("/getDriverId")
         public Long getDriverId(@RequestParam Long userId) {
             return driverService.getDriverIdByUserId(userId);
         }
 
+=======
+>>>>>>> 740b8d87bffaf2c1c57d30cdc4d5f56e7738f561
     @PutMapping("/update-cargo-status")
     public ResponseEntity<String> updateCargoStatus(@RequestParam Long cargoId, @RequestParam String newStatus) {
         boolean updateSuccess = driverService.updateCargoStatus(cargoId, newStatus);

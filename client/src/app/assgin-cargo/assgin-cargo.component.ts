@@ -9,6 +9,7 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './assgin-cargo.component.html',
   styleUrls: ['./assgin-cargo.component.scss']
 })
+<<<<<<< HEAD
 
 export class AssginCargoComponent implements OnInit{
   showError:boolean=false;
@@ -154,3 +155,9 @@ export class AssginCargoComponent implements OnInit{
 // }
 
 
+=======
+export class AssginCargoComponent {
+  //todo: complete missing code..
+  
+}
+>>>>>>> 740b8d87bffaf2c1c57d30cdc4d5f56e7738f561

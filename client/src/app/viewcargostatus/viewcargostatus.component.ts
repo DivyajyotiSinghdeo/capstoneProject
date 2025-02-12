@@ -9,6 +9,7 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './viewcargostatus.component.html',
   styleUrls: ['./viewcargostatus.component.scss']
 })
+<<<<<<< HEAD
 export class ViewcargostatusComponent implements OnInit {
   cargo:any={};
  any ={};  showError: any;  
@@ -33,3 +34,10 @@ export class ViewcargostatusComponent implements OnInit {
       this.showError = true;    
     }}
 }
+=======
+export class ViewcargostatusComponent {}
+    
+  //todo: complete missing code..
+
+
+>>>>>>> 740b8d87bffaf2c1c57d30cdc4d5f56e7738f561
