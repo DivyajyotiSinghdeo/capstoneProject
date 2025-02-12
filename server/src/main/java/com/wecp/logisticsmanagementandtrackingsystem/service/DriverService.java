@@ -24,6 +24,11 @@ public class DriverService {
         return driverRepository.save(driver);
     }
 
+    public Long getDriverIdByUserId(Long userId) {
+            Driver driver = driverRepository.findByUserId(userId);
+            return driver != null ? driver.getId() : null;
+        }
+
 
     public List<Driver> getAllDrivers() {
         return driverRepository.findAll();

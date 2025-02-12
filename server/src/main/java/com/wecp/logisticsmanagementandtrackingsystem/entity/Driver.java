@@ -15,11 +15,16 @@ public class Driver {
     private Long id;
     private String name;
     private String email;
+
+    @OneToOne
+    @JoinColumn(name="user_id")
     private Long userId; 
 
     @OneToMany(mappedBy = "driver")
     @JsonIgnore
     private List<Cargo> assignedCargos;
+
+
 
     public Long getId() {
         return id;
