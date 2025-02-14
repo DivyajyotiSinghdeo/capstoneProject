@@ -14,10 +14,9 @@ import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './aboutus/about-us/about-us.component';
 
 const routes: Routes = [
-  { path: '', component:HomeComponent},
   { path: 'home', component:HomeComponent},
   { path: 'aboutus', component:AboutUsComponent},
-  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
   { path: 'dashboard', component: DashbaordComponent },

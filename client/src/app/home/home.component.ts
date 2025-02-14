@@ -18,17 +18,17 @@ services = [
     { name: 'Custom Solutions', icon: 'fa-cogs', description: 'Tailored logistics solutions to meet your needs.' }
   ];
 
+  contact = {
+      firstName: '',
+      lastName: '',
+      email: '',
+      message: ''
+    };
   
-contact = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    message: ''
-  };
+    onSubmit() {
+      console.log('Contact Form Data:', this.contact);
+      alert('Your message has been sent!');
+      this.contact = { firstName: '', lastName: '', email: '', message: '' }; // Reset form
+    }
 
-  onSubmit() {
-    console.log('Contact Form Data:', this.contact);
-    alert('Your message has been sent!');
-    this.contact = { firstName: '', lastName: '', email: '', message: '' }; // Reset form
-  }
 }
