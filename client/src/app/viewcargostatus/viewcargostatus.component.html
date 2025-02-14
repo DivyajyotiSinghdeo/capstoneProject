@@ -1,1 +1,49 @@
-//todo: complete missing code.
+<h1>Cargo Status</h1>
+<div class="container mt-3 main-content">
+  <!-- Search Bar and Cargo Info -->
+  <div class="card shadow">
+    <div class="card-body">
+      <div class="row search-bar">
+        <div class="col-md-8">
+          <div class="input-group">
+            <input class="form-control" type="text" [(ngModel)]="cargoIdMd" placeholder="Search Cargo Id">
+            <div class="input-group-append">
+              <button (click)="search()" class="btn btn-primary">Search
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <button (click)="search()" class="btn btn-dark w-100">
+           Refresh Status
+          </button>
+        </div>
+      </div>
+      
+      <p id="cId"><strong>Cargo ID: </strong> {{cargo.cargoId}}</p>
+      <p><strong>Shipment Status: </strong> <span class="badge bg-info text-white">{{cargo.status}}</span></p>
+      <div *ngIf="showError" class="alert alert-danger mt-3" role="alert">
+       {{errorMessage}}
+      </div>
+    </div>
+  </div>
+
+  <!-- Timeline -->
+  <!-- <div class="timeline">
+    <div class="progress" [style.width]="progressWidth"></div>
+    
+    <div class="timeline-step pending" [class.active]="cargo.status === 'Pending' || cargo.status === 'In_Transit' || cargo.status === 'Delivered'">
+      <div class="dot"><i class="bi bi-hourglass-split icon"></i></div>
+      <div class="label">Pending</div>
+    </div>
+    <div class="timeline-step intransit" [class.active]="cargo.status === 'In_Transit' || cargo.status === 'Delivered'">
+      <div class="dot"><i class="bi bi-truck icon"></i></div>
+      <div class="label">In Transit</div>
+    </div>
+    <div class="timeline-step delivered" [class.active]="cargo.status === 'Delivered'">
+      <div class="dot"><i class="bi bi-box-seam icon"></i></div>
+      <div class="label">Delivered</div>
+    </div>
+  </div> -->
+</div>
+

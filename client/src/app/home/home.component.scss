@@ -1,0 +1,217 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+.home-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+    video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(90%);
+    }
+
+    .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+
+        .brand {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .content {
+            text-align: center;
+            padding: 20px;
+
+            h2 {
+                font-size: 3rem;
+                margin-bottom: 20px;
+                font-family: 'Raleway', sans-serif;
+                font-weight: 700;
+            }
+
+            .quote-text {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+                font-family: 'Raleway', sans-serif;
+                font-weight: 400;
+                color: #f8f9fa;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 1.2rem;
+                border: none;
+                background: rgba(255, 255, 255, 0.3);
+                color: white;
+                cursor: pointer;
+                border-radius: 5px;
+                backdrop-filter: blur(5px);
+                transition: transform 0.3s;
+            }
+
+            button:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+.logo-black {
+    color: #f8f9fa; /* Light color for logo part */
+}
+
+.logo-blue {
+    color: #17a2b8; /* Teal color for logo part */
+}
+
+.quote {
+    color: #17a2b8;
+}
+
+.services {
+  padding: 50px 20px;
+  text-align: center;
+
+  h2 {
+    margin-top: 50px;
+    font-size: 70px;
+    margin-bottom: 30px;
+    color: #17a2b8;
+  }
+
+  p {
+    font-size: 1rem;
+    color: gray;
+    margin-bottom: 40px;
+  }
+
+  .service-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+    
+
+    .service-card {
+      width: 300px;
+      padding: 50px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s ease, background 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+      &:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.2);
+        background-color: rgb(243, 242, 242);
+      }
+
+      i {
+        font-size: 3rem;
+        color: #17a2b8;
+        margin-bottom: 10px;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+        color: #17a2b8;
+      }
+
+      p {
+        font-size: 1rem;
+        color: gray;
+      }
+    }
+  }
+}
+
+
+.contact {
+  margin-top: 50px;
+  padding: 50px 20px;
+  text-align: center;
+  background-color: rgb(245, 245, 245);
+
+  h2 {
+    font-size: 70px;
+    margin-bottom: 30px;
+    color: #17a2b8;
+  }
+
+  p {
+    font-size: 1rem;
+    color: gray;
+    margin-bottom: 20px;
+  }
+
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .form-group {
+      display: flex;
+      gap: 10px;
+
+      input {
+        flex: 1;
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+      }
+    }
+
+    textarea {
+      width: 100%;
+      height: 120px;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+      resize: none;
+    }
+
+    button {
+      padding: 12px;
+      width: 15%;
+      font-size: 1rem;
+      border: none;
+      background: rgb(0, 119, 255);
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      align-items: left;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: rgb(0, 108, 231);
+    }
+  }
+}
+

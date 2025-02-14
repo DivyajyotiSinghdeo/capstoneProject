@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   IsLoggin:any=false;
-  roleName: string | null;
+  roleName!: string | null;
+  showNavbarFooter:boolean = true; 
   constructor(private authService: AuthService, private router:Router)
   {
     debugger;
@@ -20,11 +21,18 @@ export class AppComponent {
       this.router.navigateByUrl('/login'); 
     
     }
+
+    this.router.events.subscribe(event => {      
+      if (event instanceof NavigationEnd) {        
+        this.showNavbarFooter = !this.router.url.includes('\home');      
+      }   
+     }); 
   }
   logout()
 {
   this.authService.logout();
   window.location.reload();
 }
-
+  
+    
 }

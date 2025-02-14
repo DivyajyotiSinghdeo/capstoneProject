@@ -1,1 +1,51 @@
-//todo: complete missing code..
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+ 
+ <div class="container-c">
+   <!-- <video autoplay muted loop id="bg-video">
+     <source src="path/to/your/video.mp4" type="video/mp4">
+     Your browser does not support HTML5 video.  </video>  -->
+     <video autoplay loop [muted]="true" plays-inline class="background-clip" oncanplay="this.parentElement.classList.add('video-loaded')">
+           <source src="proxy/3000/../../assets/loginmp4.mp4" type="video/mp4">
+         </video>
+
+   <div class="wrapper">
+     <form [formGroup]="itemForm" (ngSubmit)="onLogin()">
+       <h1>Login</h1>
+       <div class="input-box">
+         <input type="text" placeholder="Username" name="username" formControlName="username" [(ngModel)]="formModel.username" id="username">
+         <div *ngIf="itemForm.controls['username'].invalid && (itemForm.controls['username'].dirty || itemForm.controls['username'].touched)"
+                 class="ng-dirty">
+                 <span *ngIf="itemForm.controls['username'].errors">
+                   <small class="text-danger">*username is required</small>
+                 </span>
+             </div>
+       </div>
+       <div class="input-box">
+         <input type="password" name="password" formControlName="password" [(ngModel)]="formModel.password" class="form-control" id="password" placeholder="Password">
+         <div *ngIf="itemForm.controls['password'].invalid && (itemForm.controls['password'].dirty || itemForm.controls['password'].touched)"
+           class="ng-dirty">
+           <span *ngIf="itemForm.controls['password'].errors">
+             <small class="text-danger">*password is required</small>
+           </span>
+         </div>
+       </div>
+       <button type="submit" class="btn">Login</button>
+       <div class="register-link">
+         <p>Don't have an account? <a (click)="registration()">Register</a></p>
+       </div>
+     </form>
+     <div *ngIf="showError" class="alert alert-danger" role="alert">
+       {{errorMessage}}
+     </div>
+   </div>
+ </div>
+ </body>
+ </html>

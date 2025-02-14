@@ -1,1 +1,127 @@
-//todo: Complete missing code..
+<!-- <div class="container mt-5 main-content">
+  <h1 id="heading">Assigned Cargo</h1>
+  
+
+ 
+  <div class="card">
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li *ngFor="let cargo of paginatedCargoList" class="list-group-item d-flex align-items-center mb-3 border rounded-3 shadow-sm">
+          
+          <div class="w-100">
+            <h5 class="mb-1">Cargo ID: {{cargo.id}}</h5>
+            <p class="mb-1"><strong>Content: </strong> {{cargo.content}}</p>
+            <p class="mb-1"><strong>Size: </strong> {{cargo.size}}</p>
+            <p class="mb-1"><strong>Status: </strong> <span [ngClass]="{'text-success': cargo.status === 'Delivered', 'text-warning': cargo.status === 'Pending', 'text-info': cargo.status === 'In_Transit'}">{{cargo.status}}</span></p>
+            
+          </div>
+          <div>
+            <button data-bs-toggle="modal" (click)="addStatus(cargo)" data-bs-target="#driverModal" class="btn btn-primary">
+              <b>Update Status</b>
+            </button>
+          </div>
+        </li>
+      </ul>
+
+      
+    </div>
+  </div>
+
+  <div class="modal fade" id="driverModal" tabindex="-1" aria-labelledby="driverModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Update Status</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="statusSelect" class="form-label">
+              Select Status
+            </label>
+            <div class="dropdown-container">
+              <select id="statusSelect" [(ngModel)]="statusModel.newStatus" class="form-select custom-select">
+                <option value="null" disabled>Select Status</option>
+                <option value="Delivered">Delivered</option>
+                <option value="Pending">Pending</option>
+                <option value="In_Transit">In Transit</option>
+              </select>
+            </div>
+          </div>
+  
+          <div *ngIf="showMessage" class="alert alert-success mt-4" role="alert">
+           {{responseMessage}}
+          </div>
+          <div *ngIf="showError" class="alert alert-danger" role="alert">
+            {{errorMessage}}
+          </div>
+        </div>
+        <div class="modal-footer">
+          
+          <button type="button" class="btn btn-primary" (click)="assignDriver()">
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+   -->
+
+<div class="container mt-5 main-content">
+  <h1 id="heading">Assigned Cargo</h1>
+  
+  <div class="card">
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li *ngFor="let cargo of cargList" class="list-group-item d-flex align-items-center mb-3 border rounded-3 shadow-sm">
+          <div class="w-100">
+            <h5 class="mb-1">Cargo ID: {{cargo.id}}</h5>
+            <p class="mb-1"><strong>Content: </strong> {{cargo.content}}</p>
+            <p class="mb-1"><strong>Size: </strong> {{cargo.size}}</p>
+            <p class="mb-1"><strong>Status: </strong> <span [ngClass]="{'text-success': cargo.status === 'Delivered', 'text-warning': cargo.status === 'Pending', 'text-info': cargo.status === 'In_Transit'}">{{cargo.status}}</span></p>
+          </div>
+          <div>
+            <button data-bs-toggle="modal" (click)="addStatus(cargo)" data-bs-target="#driverModal" class="btn btn-primary">
+              <b>Update Status</b>
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="modal fade" id="driverModal" tabindex="-1" aria-labelledby="driverModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Update Status</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="statusSelect" class="form-label">Select Status</label>
+            <div class="dropdown-container">
+              <select id="statusSelect" [(ngModel)]="statusModel.newStatus" class="form-select custom-select">
+                <option value="null" disabled>Select Status</option>
+                <option value="Delivered">Delivered</option>
+               >
+                <option value="In_Transit">In Transit</option>
+              </select>
+            </div>
+          </div>
+  
+          <div *ngIf="showMessage" class="alert alert-success mt-4" role="alert">
+            {{responseMessage}}
+          </div>
+          <div *ngIf="showError" class="alert alert-danger" role="alert">
+            {{errorMessage}}
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="assignDriver()">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+   

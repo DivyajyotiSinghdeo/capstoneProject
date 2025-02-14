@@ -1,0 +1,14 @@
+.main-content{
+    padding-top: 20px;
+    padding-bottom: 150px;
+}
+
+#heading{
+    align-items: center;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.card-body{
+    padding-top:30px;
+}

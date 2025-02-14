@@ -1,0 +1,122 @@
+<!-- 
+<div class="container mt-5 main-content">
+  <h1>Assign Cargo</h1>
+
+    <div class="row">
+      <div *ngIf="cargList.length==0" class="error-container">
+        <h5>No Cargos Found!</h5>
+      </div>
+      
+      <div *ngFor="let cargo of paginatedCargoList" class="col-md-4 mb-4">
+        <div class="card cargo-card shadow-sm">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+              <h5 class="card-title"> {{ cargo.content }}</h5>
+              <span class="badge status-badge" [ngClass]="{
+                'delivered': cargo.status === 'Delivered',
+                'pending': cargo.status === 'Pending',
+                'in-transit': cargo.status === 'In_Transit',
+                'Assigned': cargo.status === 'Assigned'
+              }">{{ cargo.status }}</span>
+            </div>
+            <p class="card-text">Size: {{ cargo.size }}</p>
+            <p class="card-text">ID: {{ cargo.id }}</p>
+            <button data-bs-toggle="modal" (click)="addDriver(cargo)" data-bs-target="#driverModal" class="btn btn-primary w-100" [disabled]="cargo.assigned">
+              Assign Driver
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+    <div class="modal fade" id="driverModal" tabindex="-1" aria-labelledby="driverModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="driverModalLabel"> Assign Driver</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <select [(ngModel)]="assignModel.driverId" class="form-select">
+              <option value="null">Choose Driver</option>
+              <option *ngFor="let driver of driverList" [value]="driver.id">{{ driver.name }}</option>
+            </select>
+  
+            <div *ngIf="showMessage" class="alert alert-success mt-4" role="alert">
+             {{ responseMessage }}
+            </div>
+            <div *ngIf="showError" class="alert alert-danger mt-4" role="alert">
+               {{ errorMessage }}
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" (click)="assignDriver()">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+   -->
+
+
+
+   <div class="container mt-5 main-content">
+     <h1>Assign Cargo</h1>
+     
+     <div class="row">
+       <div *ngIf="cargList.length == 0" class="error-container">
+         <h5>No Cargos Found!</h5>
+       </div>
+       
+       <div *ngFor="let cargo of cargList" class="col-md-4 mb-4">
+         <div class="card cargo-card shadow-sm">
+           <div class="card-body">
+             <div class="d-flex justify-content-between align-items-center">
+               <h5 class="card-title">{{ cargo.content }}</h5>
+               <span class="badge status-badge" [ngClass]="{
+                 'delivered': cargo.status === 'Delivered',
+                 'pending': cargo.status === 'Pending',
+                 'in-transit': cargo.status === 'In_Transit',
+                 'Assigned': cargo.status === 'Assigned'
+               }">{{ cargo.status }}</span>
+             </div>
+             <p class="card-text">Size: {{ cargo.size }}</p>
+             <p class="card-text">ID: {{ cargo.id }}</p>
+             <button data-bs-toggle="modal" (click)="addDriver(cargo)" data-bs-target="#driverModal" class="btn btn-primary w-100" [disabled]="cargo.assigned">
+               Assign Driver
+             </button>
+           </div>
+         </div>
+       </div>
+     </div>
+   
+     <!-- Assign Driver Modal -->
+     <div class="modal fade" id="driverModal" tabindex="-1" aria-labelledby="driverModalLabel" aria-hidden="true">
+       <div class="modal-dialog">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="driverModalLabel">Assign Driver</h5>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+           <div class="modal-body">
+             <select [(ngModel)]="assignModel.driverId" class="form-select">
+               <option value="null">Choose Driver</option>
+               <option *ngFor="let driver of driverList" [value]="driver.id">{{ driver.name }}</option>
+             </select>
+   
+             <div *ngIf="showMessage" class="alert alert-success mt-4" role="alert">
+               {{ responseMessage }}
+             </div>
+             <div *ngIf="showError" class="alert alert-danger mt-4" role="alert">
+               {{ errorMessage }}
+             </div>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-primary" (click)="assignDriver()">Save</button>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>

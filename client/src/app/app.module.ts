@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +15,14 @@ import { DashbaordComponent } from './dashbaord/dashbaord.component';
 import { AddcargoComponent } from './addcargo/addcargo.component';
 import { AssginCargoComponent } from './assgin-cargo/assgin-cargo.component';
 import { ViewcargostatusComponent } from './viewcargostatus/viewcargostatus.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { GlobalErrorHandler } from '../services/global-error-handler.service';
+import { Navbar } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
+import { ShipmentsComponent } from './shipments/shipments.component';
+import { FooterComponent } from './footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AboutUsComponent } from './aboutus/about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -24,16 +32,25 @@ import { ViewcargostatusComponent } from './viewcargostatus/viewcargostatus.comp
       DashbaordComponent,
       AddcargoComponent,
       AssginCargoComponent,
-      ViewcargostatusComponent
+      ViewcargostatusComponent,
+      ErrorPageComponent,
+      Navbar,
+      HomeComponent,
+      ShipmentsComponent,
+      FooterComponent,
+      AboutUsComponent
+      
+      
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule 
+    HttpClientModule,
+    BrowserAnimationsModule,
   ],
-  providers: [HttpService,HttpClientModule ],
+  providers: [HttpService,HttpClientModule  ,{provide:ErrorHandler,useClass:GlobalErrorHandler}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

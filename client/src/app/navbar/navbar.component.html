@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-light p-4 shadow-">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse pl-2" id="navbarTogglerDemo01">
+    <div id="Nav_Bar">
+      <div id="Logo_Wrapper">
+        <a class="navbar-brand" href="/">
+          <span class="logo-black">Logi</span><span class="logo-blue">Track</span>
+        </a>
+      </div>
+    </div>
+    <ul class="navbar-nav ms-auto justify-content-end mt-2 mt-lg-0">
+      <li class="nav-item" *ngIf="roleName === 'BUSINESS'">
+        <a class="nav-link" [routerLink]="['/dashboard']">New Shipments</a>
+        <a class="nav-link" [routerLink]="['/shipments']">Cargo Assignments</a>
+    </li>
+    <li class="nav-item" *ngIf="IsLoggin">
+        <button class="Btn Btn-spacing" (click)="logout()">Log Out</button>
+    </li>
+    <li class="nav-item" *ngIf="!IsLoggin">
+      <a class="nav-link" routerLink="/home">Home</a>
+      <a class="nav-link" routerLink="/aboutus">About</a>
+      </li>
+    <li class="nav-item" *ngIf="!IsLoggin">
+        <button class="Btn Btn-spacing" routerLink="/login" >Log In</button>
+        </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+ 
