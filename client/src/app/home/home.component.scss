@@ -1,18 +1,19 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
-//@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 .home-container {
     position: relative;
     width: 100%;
     height: 100vh;
     overflow: hidden;
-
+    
     video {
         position: absolute;
         width: 100%;
         height: 100%;
         object-fit: cover;
-        filter: brightness(90%);
+        //filter: brightness(90%);
     }
 
     .overlay {
@@ -41,14 +42,14 @@
             h2 {
                 font-size: 3rem;
                 margin-bottom: 20px;
-                font-family: 'Raleway', sans-serif;
+                font-family: 'Montserrat', sans-serif;
                 font-weight: 700;
             }
 
             .quote-text {
                 font-size: 1.5rem;
                 margin-bottom: 20px;
-                font-family: 'Raleway', sans-serif;
+                font-family: 'Montserrat', sans-serif;
                 font-weight: 400;
                 color: #f8f9fa;
             }
@@ -93,12 +94,15 @@
     font-size: 70px;
     margin-bottom: 30px;
     color: #17a2b8;
+    font-family: 'Montserrat', sans-serif;
+    
   }
 
   p {
     font-size: 1rem;
     color: gray;
     margin-bottom: 40px;
+    font-family: 'Montserrat', sans-serif;
   }
 
   .service-list {
@@ -135,11 +139,13 @@
         font-size: 1.5rem;
         margin-bottom: 5px;
         color: #17a2b8;
+        font-family: 'Montserrat', sans-serif;
       }
 
       p {
         font-size: 1rem;
         color: gray;
+        font-family: 'Montserrat', sans-serif;
       }
     }
   }
@@ -156,12 +162,14 @@
     font-size: 70px;
     margin-bottom: 30px;
     color: #17a2b8;
+    font-family: 'Montserrat', sans-serif;
   }
 
   p {
     font-size: 1rem;
     color: gray;
     margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
   }
 
   form {
@@ -182,6 +190,8 @@
         border: 1px solid #ccc;
         border-radius: 5px;
         outline: none;
+        font-family: 'Montserrat', sans-serif;
+
       }
     }
 
@@ -194,6 +204,7 @@
       border-radius: 5px;
       outline: none;
       resize: none;
+      font-family: 'Montserrat', sans-serif;
     }
 
     button {
@@ -207,6 +218,7 @@
       border-radius: 5px;
       align-items: left;
       transition: background 0.3s ease;
+      font-family: 'Montserrat', sans-serif;
     }
 
     button:hover {

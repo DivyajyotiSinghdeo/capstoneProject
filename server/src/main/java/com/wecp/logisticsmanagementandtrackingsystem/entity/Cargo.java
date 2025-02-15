@@ -16,11 +16,7 @@ public class Cargo {
     private String content;
     private String size;
     private String status; // Status can be 'PENDING', 'IN_TRANSIT', 'DELIVERED'
-    // private String pickupAddress;
-    // private String deliveryAddress;
-    // private String estimatedDeliveryDate;
-    // private String customerName;
-    // private String senderName;
+    
     private boolean assigned; // New field to track assignment status
  
     public boolean isAssigned() {
