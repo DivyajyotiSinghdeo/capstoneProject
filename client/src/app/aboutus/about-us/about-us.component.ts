@@ -36,7 +36,7 @@ teamMembers = [
     },
     {
       name: 'Aswan S',
-      role: 'Project Manager',
+      role: 'Team Member',
       image: 'assets/member4.jpg',
       quote: 'Good management is the art of making problems so interesting that everyone wants to solve them.'
     }
