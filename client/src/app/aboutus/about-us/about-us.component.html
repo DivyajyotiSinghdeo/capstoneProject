@@ -8,21 +8,64 @@
     </div>
   </div>
 
-  <!-- About Team Section -->
-  <div class="about-team">
-    <div class="text">
-      <h2>Meet Our Team</h2>
-      <p>We are a group of dedicated professionals who strive for excellence in everything we do. Our mission is to deliver the best possible solutions to our clients.</p>
+
+
+
+<div class="icons-section">
+    <div class="icon-box">
+      <i class="fas fa-bullseye"></i>
+      <h3>Our Mission</h3>
+      <p>Delivering innovative solutions with precision and excellence.</p>
     </div>
-    <img src="assets/team.jpg" alt="Our Team">
+
+    <div class="icon-box" id="user2">
+      <i class="fas fa-users" ></i>
+      <h3>Our Team</h3>
+      <p>A diverse group of passionate and skilled professionals.</p>
+    </div>
+
+    <div class="icon-box" id="user3">
+      <i class="fas fa-lightbulb"></i>
+      <h3>Our Vision</h3>
+      <p>To create a sustainable future with cutting-edge technology.</p>
+    </div>
   </div>
 
-  <!-- Additional Information -->
-  <div class="additional-info">
-    <h2>Our Vision</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquam dolor in elit malesuada, id vulputate justo elementum.</p>
+  
 
-    <h2>Our Values</h2>
-    <p>Integrity, innovation, and collaboration are the foundation of our success. We are committed to providing high-quality services with a focus on customer satisfaction.</p>
+  <!-- About Team Section -->
+ <div class="about-team">
+   <div class="text">
+     <h2>Meet Our Team</h2>
+     <p>We are a team of passionate individuals committed to innovation and excellence. Our goal is to deliver the best solutions to our clients while fostering a culture of growth and creativity.</p>
+     <p>Our expertise spans multiple industries, ensuring a diverse and dynamic approach to problem-solving.</p>
+   </div>
+ 
+   <div class="image-container">
+     <img src="proxy/3000/../../assets/team1.jpg" alt="Our Team">
+     <div class="rectangle one"></div>
+     <div class="rectangle two"></div>
+   </div>
+ </div>
+
+
+ <div class="team-carousel">
+    <h2><b>Our Team Members</b></h2>
+    <div class="carousel">
+      <button class="prev" (click)="prevSlide()">&#10094;</button>
+      <div class="carousel-inner">
+        <div class="card" *ngFor="let member of teamMembers; let i = index" [class.active]="i === activeIndex">
+          <i class="fa fa-user-circle"></i>
+          <h3>{{ member.name }}</h3>
+          <p class="designation">{{ member.role }}</p>
+          <p class="quote">{{ member.quote }}</p>
+          <i class="fas fa-quote-right quote-icon"></i>
+        </div>
+      </div>
+      <button class="next" (click)="nextSlide()">&#10095;</button>
+    </div>
   </div>
+
+ 
+  
 </div>
