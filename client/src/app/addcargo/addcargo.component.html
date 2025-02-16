@@ -1,6 +1,4 @@
-
-
- <div class="container mt-4 main-content">
+<div class="container mt-4 main-content">
    <div class="row">
      <div class="col-md-12">
        <div class="card shadow-sm border-light">
@@ -35,6 +33,22 @@
                    </div>
                  </div>
                </div>
+
+               <div class="col-md-4">
+                                <div class="mb-3">
+                                  <label for="estimatedDeliveryDate" class="form-label">Estimated Delivery Date</label>
+                                  <div class="input-group">
+                                    <input type="text" name="estimatedDeliveryDate" formControlName="estimatedDeliveryDate" [(ngModel)]="formModel.estimatedDeliveryDate" class="form-control" id="estimatedDeliveryDate" placeholder="Estimated Delivery Date">
+                                  </div>
+                                  <div *ngIf="itemForm.get('estimatedDeliveryDate')?.hasError('required') && itemForm.get('estimatedDeliveryDate')?.touched" class="error">
+                                    <span class="text-danger">Estimated Delivery Date is required.</span>
+                                  </div>
+                                  <div *ngIf="itemForm.get('estimatedDeliveryDate')?.hasError('invalidDate') && itemForm.get('estimatedDeliveryDate')?.dirty" class="error">
+                                    <span class="text-danger">Date must be in format YYYY-MM-DD</span>
+                                  </div>
+                                </div>
+                              </div>
+               
                <div class="col-md-4">
                  <div class="mb-3">
                    <label for="status" class="form-label">Status</label>
@@ -49,6 +63,40 @@
                    </div>
                  </div>
                </div>
+               
+               <div class="col-md-4">
+                  <div class="mb-3">
+                    <label for="paymentStatus" class="form-label">Payment Status</label>
+                    <div class="input-group">
+                      <select [(ngModel)]="formModel.paymentStatus" formControlName="paymentStatus" class="form-select">
+                        <option value="null">Choose Payment Status</option>
+                        <option value="Paid">Paid</option>
+                        <option value="Unpaid">Cash on Delivery</option>
+                      </select>
+                    </div>
+                    <div *ngIf="itemForm.controls['paymentStatus'].invalid && (itemForm.controls['paymentStatus'].dirty || itemForm.controls['paymentStatus'].touched)" class="ng-dirty">
+                      <span class="text-danger">Please Enter Payment Status.</span>
+                    </div>
+                  </div>
+                </div>
+
+                   <div class="col-md-4">
+                      <div class="mb-3">
+                    <label for="shipmentMethod" class="form-label">Shipment Method</label>
+                    <div class="input-group">
+                      <select [(ngModel)]="formModel.shipmentMethod" formControlName="shipmentMethod" class="form-select">
+                        <option value="null">Choose Shipment Method</option>
+                                                         
+                        <option value="Sea">Sea</option>
+                        <option value="ground">Ground</option>
+                        <option value="Air">Air</option>
+                      </select>
+                    </div>
+                    <div *ngIf="itemForm.controls['shipmentMethod'].invalid && (itemForm.controls['shipmentMethod'].dirty || itemForm.controls['shipmentMethod'].touched)" class="ng-dirty">
+                      <span class="text-danger">Please Enter Shipment Method.</span>
+                    </div>
+                  </div>
+                </div>
                <div class="col-md-12">
                  <div class="d-grid">
                    <button class="btn mt-3 text-white" [disabled]="itemForm.invalid" type="submit">

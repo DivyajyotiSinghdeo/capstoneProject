@@ -1,14 +1,28 @@
-.main-content{
-    padding-top: 20px;
-    padding-bottom: 150px;
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
 }
 
-#heading{
-    align-items: center;
-    text-align: center;
-    padding-bottom: 20px;
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 
-.card-body{
-    padding-top:30px;
+.card-text {
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+#cards:hover{
+    transform: scale(1.01);
 }

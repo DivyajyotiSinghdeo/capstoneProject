@@ -15,9 +15,12 @@ public class Cargo {
 
     private String content;
     private String size;
-    private String status; // Status can be 'PENDING', 'IN_TRANSIT', 'DELIVERED'
-    
-    private boolean assigned; // New field to track assignment status
+    private String status;
+
+    private String estimatedDeliveryDate;
+    private boolean assigned; 
+    private String paymentStatus; 
+    private String shipmentMethod;
  
     public boolean isAssigned() {
         return assigned;
@@ -27,22 +30,6 @@ public class Cargo {
         this.assigned = assigned;
     }
 
-    // public String getPickupAddress() {
-    //     return pickupAddress;
-    // }
-
-    // public void setPickupAddress(String pickupAddress) {
-    //     this.pickupAddress = pickupAddress;
-    // }
-
-    // public String getSenderName() {
-    //     return senderName;
-    // }
-
-    // public void setSenderName(String senderName) {
-    //     this.senderName = senderName;
-    // }
-
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "business_id")
     private Business business;
@@ -50,24 +37,6 @@ public class Cargo {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "driver_id")
     private Driver driver;
-
-    // public String getDeliveryAddress() {
-    //     return deliveryAddress;
-    // }
-
-    // public void setDeliveryAddress(String deliveryAddress) {
-    //     this.deliveryAddress = deliveryAddress;
-    // }
-
-    // public String getEstimatedDeliveryDate() {
-    //     return estimatedDeliveryDate;
-    // }
-
-    // public void setEstimatedDeliveryDate(String estimatedDeliveryDate) {
-    //     this.estimatedDeliveryDate = estimatedDeliveryDate;
-    // }
-
-
     
 
     public Long getId() {
@@ -118,13 +87,31 @@ public class Cargo {
         this.driver = driver;
     }
 
-    // public String getCustomerName() {
-    //     return customerName;
-    // }
+    public String getEstimatedDeliveryDate() {
+        return estimatedDeliveryDate;
+    }
 
-    // public void setCustomerName(String customerName) {
-    //     this.customerName = customerName;
-    // }
+    public void setEstimatedDeliveryDate(String estimatedDeliveryDate) {
+        this.estimatedDeliveryDate = estimatedDeliveryDate;
+    }
+
+    public String getPaymentStatus() {
+        return paymentStatus;
+    }
+
+    public void setPaymentStatus(String paymentStatus) {
+        this.paymentStatus = paymentStatus;
+    }
+
+    public String getShipmentMethod() {
+        return shipmentMethod;
+    }
+
+    public void setShipmentMethod(String shipmentMethod) {
+        this.shipmentMethod = shipmentMethod;
+    }
+
+
 
 }
 
