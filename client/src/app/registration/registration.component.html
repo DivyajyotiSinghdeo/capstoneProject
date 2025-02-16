@@ -1,5 +1,4 @@
-<!-- 
- <!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,82 +7,10 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <div class="wrapper">
-      <form [formGroup]="itemForm" (ngSubmit)="onRegister()">
-        <h1>Register</h1>
-        <div class="input-box">
-          <input type="text" placeholder="Username" formControlName="username" id="username">
-          <i class='bx bxs-user'></i>
-          <div *ngIf="itemForm.get('username')?.invalid && (itemForm.get('username')?.dirty || itemForm.get('username')?.touched)" class="ng-dirty">
-            <span class="text-danger" style="font-size: 0.75rem;">Please Enter UserName.</span>
-        </div>
-        </div>
-        <div class="input-box">
-          <input type="email" placeholder="Email" formControlName="email" id="email">
-          <i class='bx bxs-envelope'></i>
-            <div *ngIf="itemForm.get('email')?.hasError('required') && (itemForm.get('email')?.dirty || itemForm.get('email')?.touched)" class="ng-dirty">
-                <span class="text-danger" style="font-size: 0.75rem;">Please Enter email.</span>
-            </div>
-            <div>
-                <small
-                *ngIf="itemForm.get('email')?.hasError('invalidEmail') &&  itemForm.get('email')?.dirty && itemForm.get('email')?.touched && itemForm.get('password')?.value"
-                class="text-danger" style="font-size: 0.75rem;">Enter a Valid Email.
-                </small>
-            </div>
-        </div>
-        <div class="input-box">
-          <input type="password" placeholder="Password" formControlName="password" id="password">
-          <i class='bx bxs-lock-alt'></i>
-          <div *ngIf="itemForm.get('password')?.hasError('required') && (itemForm.get('password')?.dirty || itemForm.get('password')?.touched)" class="ng-dirty">
-                <span class="text-danger" style="font-size: 0.75rem;">Please Enter password.</span>
-            </div>
-            <div>
-            <span 
-                *ngIf="itemForm.get('password')?.hasError('invalidPassword') && itemForm.get('password')?.dirty && itemForm.get('password')?.touched && itemForm.get('password')?.value"
-                class="text-danger" style="font-size: 0.75rem;">1 uppercase, lowercase, digit , special character is required.
-            </span>
-            </div>
-        </div>
-
-
-            <div class="form-group input-box">
-              <select id="role" formControlName="role" [(ngModel)]="formModel.role" class="form-control">
-                <option value="" disabled>Choose a role</option>
-                <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
-              </select>
-              <div *ngIf="itemForm.get('role')?.touched && itemForm.get('role')?.invalid" class="text-danger">
-                <div *ngIf="itemForm.get('role')?.hasError('invalidRole')">Please select a valid role.</div>
-              </div>
-            </div>
-        <button type="submit" class="btn mt-4">Register</button>
-        <div class="register-link">
-          <p>Already have an account? <a [routerLink]="['/login']">Login</a></p>
-        </div>
-      </form>
-      <div *ngIf="showMessage" class="alert alert-success mt-3" role="alert" style="font-size: 0.875rem;">
-        {{responseMessage}}
-    </div>
-    <div *ngIf="showError" class="alert alert-danger mt-3" role="alert" style="font-size: 0.875rem;">
-        {{errorMessage}}
-    </div>
-    </div>
-</body>
-</html> -->
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registration Form</title>
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-</head>
-<body>
+  <div class="extraSpace"> </div>
   <div class="container-c">
     <video autoplay loop [muted]="true" plays-inline class="background-clip" oncanplay="this.parentElement.classList.add('video-loaded')">
-      <source src="proxy/3000/../../assets/loginmp4.mp4" type="video/mp4">
+      <source src="proxy/3000/../../assets/welcome.mp4" type="video/mp4">
     </video>
     <div class="wrapper">
       <form [formGroup]="itemForm" (ngSubmit)="onRegister()">
@@ -117,13 +44,14 @@
         </div>
         <div class="form-group input-box">
           <select id="role" formControlName="role" [(ngModel)]="formModel.role" class="form-control">
-            <option value="" disabled>Choose a role</option>
+            <option value="" disabled selected>Choose a role</option>
             <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
           </select>
           <div *ngIf="itemForm.get('role')?.touched && itemForm.get('role')?.invalid" class="text-danger">
             <div *ngIf="itemForm.get('role')?.hasError('invalidRole')">Please select a valid role.</div>
           </div>
         </div>
+
         <button type="submit" class="btn mt-4">Register</button>
         <div class="register-link">
           <p>Already have an account? <a [routerLink]="['/login']">Login</a></p>
@@ -139,4 +67,183 @@
   </div>
 </body>
 </html>
+ -->
 
+
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Registration Form</title>
+   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+ </head>
+ <body>
+   <div class="container-c">
+     <video autoplay loop [muted]="true" plays-inline class="background-clip" oncanplay="this.parentElement.classList.add('video-loaded')">
+       <source src="assets/welcome.mp4" type="video/mp4">
+     </video>
+ 
+     <div class="wrapper">
+       <form [formGroup]="itemForm" (ngSubmit)="onRegister()">
+         <h1>Register</h1>
+ 
+         <!-- Username -->
+         <div class="input-box">
+           <input type="text" placeholder="Username" formControlName="username" id="username">
+           <i class="bx bxs-user"></i>
+           <div
+             *ngIf="
+               itemForm.get('username')?.invalid &&
+               (itemForm.get('username')?.dirty || itemForm.get('username')?.touched)
+             "
+             class="ng-dirty"
+           >
+             <span class="text-danger" style="font-size: 0.75rem;">Please Enter UserName.</span>
+           </div>
+         </div>
+ 
+         <!-- Email -->
+         <div class="input-box">
+           <input type="email" placeholder="Email" formControlName="email" id="email">
+           <i class="bx bxs-envelope"></i>
+           <div
+             *ngIf="
+               itemForm.get('email')?.hasError('required') &&
+               (itemForm.get('email')?.dirty || itemForm.get('email')?.touched)
+             "
+             class="ng-dirty"
+           >
+             <span class="text-danger" style="font-size: 0.75rem;">Please Enter email.</span>
+           </div>
+           <div>
+             <small
+               *ngIf="
+                 itemForm.get('email')?.hasError('invalidEmail') &&
+                 itemForm.get('email')?.dirty &&
+                 itemForm.get('email')?.touched &&
+                 itemForm.get('password')?.value
+               "
+               class="text-danger"
+               style="font-size: 0.75rem;"
+             >
+               Enter a Valid Email.
+             </small>
+           </div>
+         </div>
+ 
+         <!-- Password -->
+         <div class="input-box">
+           <input
+             type="password"
+             placeholder="Password"
+             formControlName="password"
+             id="password"
+             (focus)="onPasswordFocus()"
+             (blur)="onPasswordBlur()"
+           >
+           <i class="bx bxs-lock-alt"></i>
+           <div
+             *ngIf="
+               itemForm.get('password')?.hasError('required') &&
+               (itemForm.get('password')?.dirty || itemForm.get('password')?.touched)
+             "
+             class="ng-dirty"
+           >
+             <span class="text-danger" style="font-size: 0.75rem;">Please Enter password.</span>
+           </div>
+         </div>
+ 
+         <!-- Checklist: only visible on focus -->
+         <div class="password-requirements" *ngIf="showPasswordChecklist">
+           <ul style="list-style: none; padding: 0;">
+             <li [class.valid]="passwordCriteria.hasMinLength">
+               <i
+                 class="bx"
+                 [class.bx-check-circle]="passwordCriteria.hasMinLength"
+                 [class.bx-circle]="!passwordCriteria.hasMinLength"
+               ></i>
+               At least 8 characters
+             </li>
+             <li [class.valid]="passwordCriteria.hasUpperCase">
+               <i
+                 class="bx"
+                 [class.bx-check-circle]="passwordCriteria.hasUpperCase"
+                 [class.bx-circle]="!passwordCriteria.hasUpperCase"
+               ></i>
+               Contains uppercase letter
+             </li>
+             <li [class.valid]="passwordCriteria.hasLowerCase">
+               <i
+                 class="bx"
+                 [class.bx-check-circle]="passwordCriteria.hasLowerCase"
+                 [class.bx-circle]="!passwordCriteria.hasLowerCase"
+               ></i>
+               Contains lowercase letter
+             </li>
+             <li [class.valid]="passwordCriteria.hasNumber">
+               <i
+                 class="bx"
+                 [class.bx-check-circle]="passwordCriteria.hasNumber"
+                 [class.bx-circle]="!passwordCriteria.hasNumber"
+               ></i>
+               Contains digit
+             </li>
+             <li [class.valid]="passwordCriteria.hasSpecialChar">
+               <i
+                 class="bx"
+                 [class.bx-check-circle]="passwordCriteria.hasSpecialChar"
+                 [class.bx-circle]="!passwordCriteria.hasSpecialChar"
+               ></i>
+               Contains special character
+             </li>
+           </ul>
+         </div>
+ 
+         <!-- Role -->
+         <div class="form-group input-box">
+           <select id="role" formControlName="role" class="form-control">
+             <option value="" disabled>Choose a role</option>
+             <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+           </select>
+           <div
+             *ngIf="itemForm.get('role')?.touched && itemForm.get('role')?.invalid"
+             class="text-danger"
+           >
+             <div *ngIf="itemForm.get('role')?.hasError('invalidRole')">
+               Please select a valid role.
+             </div>
+           </div>
+         </div>
+ 
+         <button type="submit" class="btn mt-4">Register</button>
+ 
+         <div class="register-link">
+           <p>Already have an account?
+             <a [routerLink]="['/login']">Login</a>
+           </p>
+         </div>
+       </form>
+ 
+       <!-- Success & Error Messages -->
+       <div
+         *ngIf="showMessage"
+         class="alert alert-success mt-3"
+         role="alert"
+         style="font-size: 0.875rem;"
+       >
+         {{ responseMessage }}
+       </div>
+       <div
+         *ngIf="showError"
+         class="alert alert-danger mt-3"
+         role="alert"
+         style="font-size: 0.875rem;"
+       >
+         {{ errorMessage }}
+       </div>
+     </div>
+   </div>
+ </body>
+ </html>

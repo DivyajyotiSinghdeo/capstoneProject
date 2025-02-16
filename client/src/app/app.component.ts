@@ -24,7 +24,7 @@ export class AppComponent {
 
     this.router.events.subscribe(event => {      
       if (event instanceof NavigationEnd) {        
-        this.showNavbarFooter = !this.router.url.includes('\home');      
+        this.showNavbarFooter = !this.router.url.includes('/home');      
       }   
      }); 
   }

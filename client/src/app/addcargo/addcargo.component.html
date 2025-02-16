@@ -1,114 +1,107 @@
-<div class="container mt-4 main-content">
-   <div class="row">
-     <div class="col-md-12">
-       <div class="card shadow-sm border-light">
-         <div class="card-header text-white d-flex align-items-center">
-           <span>Create New Shipment</span>
+<h1>Welcome, <span class="username-highlight">{{username}}</span>!</h1>
+
+<div class="container mt-5 main-content">
+   <div class="row justify-content-center">
+     <div class="col-lg-10">
+       <div class="card shadow-lg border-0 rounded-lg">
+         <div class="card-header bg-dark text-white text-center py-3">
+           <h4 class="mb-0 headings">Create New Shipment</h4>
          </div>
-         <div class="card-body">
-           <form class="mb-3 mt-md-4" [formGroup]="itemForm" (ngSubmit)="onSubmit()">
-             <div class="row">
+         <div class="card-body p-4">
+           <form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+             <div class="row g-3">
+ 
                <div class="col-md-4">
-                 <div class="mb-3">
-                   <label for="content" class="form-label">Product Detail</label>
-                   <div class="input-group">
-                     <input type="content" name="content" formControlName="content" [(ngModel)]="formModel.content" class="form-control" id="content" placeholder="Content">
-                   </div>
-                   <div *ngIf="itemForm.controls['content'].invalid && (itemForm.controls['content'].dirty || itemForm.controls['content'].touched)" class="ng-dirty">
-                     <span class="text-danger">Please Enter content.</span>
-                   </div>
+                 <label for="content" class="form-label">Product Detail</label>
+                 <input type="text" formControlName="content" [(ngModel)]="formModel.content" class="form-control" placeholder="Enter product detail">
+                 <div *ngIf="itemForm.controls['content'].invalid && (itemForm.controls['content'].dirty || itemForm.controls['content'].touched)">
+                   <span class="text-danger small">Please enter content.</span>
                  </div>
                </div>
+ 
                <div class="col-md-4">
-                 <div class="mb-3">
-                   <label for="size" class="form-label">Quantity</label>
-                   <div class="input-group">
-                     <input type="number" name="size" formControlName="size" [(ngModel)]="formModel.quantity" class="form-control" id="size" placeholder="Quantity">
-                   </div>
-                   <div *ngIf="itemForm.get('size')?.hasError('required') && itemForm.get('size')?.touched" class="error">
-                     <span class="text-danger">Quantity is required.</span>
-                   </div>
-                   <div *ngIf="itemForm.get('size')?.hasError('min') && itemForm.get('size')?.dirty" class="error">
-                     <span class="text-danger">Quantity must be greater than 0.</span>
-                   </div>
+                 <label for="size" class="form-label">Quantity</label>
+                 <input type="number" formControlName="size" [(ngModel)]="formModel.quantity" class="form-control" placeholder="Enter quantity">
+                 <div *ngIf="itemForm.get('size')?.invalid && itemForm.get('size')?.touched">
+                   <span class="text-danger small">Quantity required and must be greater than 0.</span>
                  </div>
                </div>
+ 
+               <!-- <div class="col-md-4">
+                 <label for="estimatedDeliveryDate" class="form-label">Estimated Delivery Date</label>
+                 <input type="date" formControlName="estimatedDeliveryDate" [(ngModel)]="formModel.estimatedDeliveryDate" class="form-control">
+                 <div *ngIf="itemForm.get('estimatedDeliveryDate')?.invalid && itemForm.get('estimatedDeliveryDate')?.touched">
+                   <span class="text-danger small">Please enter a valid date.</span>
+                 </div>
+               </div> -->
+
 
                <div class="col-md-4">
-                                <div class="mb-3">
-                                  <label for="estimatedDeliveryDate" class="form-label">Estimated Delivery Date</label>
-                                  <div class="input-group">
-                                    <input type="text" name="estimatedDeliveryDate" formControlName="estimatedDeliveryDate" [(ngModel)]="formModel.estimatedDeliveryDate" class="form-control" id="estimatedDeliveryDate" placeholder="Estimated Delivery Date">
-                                  </div>
-                                  <div *ngIf="itemForm.get('estimatedDeliveryDate')?.hasError('required') && itemForm.get('estimatedDeliveryDate')?.touched" class="error">
-                                    <span class="text-danger">Estimated Delivery Date is required.</span>
-                                  </div>
-                                  <div *ngIf="itemForm.get('estimatedDeliveryDate')?.hasError('invalidDate') && itemForm.get('estimatedDeliveryDate')?.dirty" class="error">
-                                    <span class="text-danger">Date must be in format YYYY-MM-DD</span>
-                                  </div>
-                                </div>
-                              </div>
-               
-               <div class="col-md-4">
                  <div class="mb-3">
-                   <label for="status" class="form-label">Status</label>
-                   <div class="input-group">
-                     <select [(ngModel)]="formModel.status" formControlName="status" class="form-select">
-                       <option value="null">Choose Status</option>
-                       <option value="Assigned">Assigned</option>
-                     </select>
-                   </div>
-                   <div *ngIf="itemForm.controls['status'].invalid && (itemForm.controls['status'].dirty || itemForm.controls['status'].touched)" class="ng-dirty">
-                     <span class="text-danger">Please Enter Status.</span>
-                   </div>
-                 </div>
-               </div>
-               
+                <label for="estimatedDeliveryDate" class="form-label">Estimated Delivery Date</label>
+                <div class="input-group">
+                  <input type="text" name="estimatedDeliveryDate" formControlName="estimatedDeliveryDate" [(ngModel)]="formModel.estimatedDeliveryDate" class="form-control" id="estimatedDeliveryDate" placeholder="Estimated Delivery Date">
+                </div>
+                <div *ngIf="itemForm.get('estimatedDeliveryDate')?.hasError('required') && itemForm.get('estimatedDeliveryDate')?.touched" class="error">
+                  <span class="text-danger">Estimated Delivery Date is required.</span>
+                </div>
+                <div *ngIf="itemForm.get('estimatedDeliveryDate')?.hasError('invalidDate') && itemForm.get('estimatedDeliveryDate')?.dirty" class="error">
+                  <span class="text-danger">Date must be in format yyyy-mm-dd</span>
+                </div>
+              </div>
+            </div>
+                              
+ 
                <div class="col-md-4">
-                  <div class="mb-3">
-                    <label for="paymentStatus" class="form-label">Payment Status</label>
-                    <div class="input-group">
-                      <select [(ngModel)]="formModel.paymentStatus" formControlName="paymentStatus" class="form-select">
-                        <option value="null">Choose Payment Status</option>
-                        <option value="Paid">Paid</option>
-                        <option value="Unpaid">Cash on Delivery</option>
-                      </select>
-                    </div>
-                    <div *ngIf="itemForm.controls['paymentStatus'].invalid && (itemForm.controls['paymentStatus'].dirty || itemForm.controls['paymentStatus'].touched)" class="ng-dirty">
-                      <span class="text-danger">Please Enter Payment Status.</span>
-                    </div>
-                  </div>
-                </div>
-
-                   <div class="col-md-4">
-                      <div class="mb-3">
-                    <label for="shipmentMethod" class="form-label">Shipment Method</label>
-                    <div class="input-group">
-                      <select [(ngModel)]="formModel.shipmentMethod" formControlName="shipmentMethod" class="form-select">
-                        <option value="null">Choose Shipment Method</option>
-                                                         
-                        <option value="Sea">Sea</option>
-                        <option value="ground">Ground</option>
-                        <option value="Air">Air</option>
-                      </select>
-                    </div>
-                    <div *ngIf="itemForm.controls['shipmentMethod'].invalid && (itemForm.controls['shipmentMethod'].dirty || itemForm.controls['shipmentMethod'].touched)" class="ng-dirty">
-                      <span class="text-danger">Please Enter Shipment Method.</span>
-                    </div>
-                  </div>
-                </div>
-               <div class="col-md-12">
-                 <div class="d-grid">
-                   <button class="btn mt-3 text-white" [disabled]="itemForm.invalid" type="submit">
-                     Submit
-                   </button>
-                   <span class="popuptext" id="submitPopup"></span>
+                 <label for="status" class="form-label">Status</label>
+                 <select formControlName="status" [(ngModel)]="formModel.status" class="form-select" >
+                   <option value="" disabled>Choose Status</option>
+                   <option value="Assigned">Assigned</option>
+                 </select>
+                 <div *ngIf="itemForm.controls['status'].invalid && (itemForm.controls['status'].dirty || itemForm.controls['status'].touched)">
+                   <span class="text-danger small">Please select a status.</span>
                  </div>
                </div>
-             </div>
-           </form>
-         </div>
-       </div>
-     </div>
-   </div>
- </div>
+ 
+               <div class="col-md-4">
+                 <label for="paymentStatus" class="form-label">Payment Status</label>
+                 <select formControlName="paymentStatus" [(ngModel)]="formModel.paymentStatus" class="form-select">
+                   <option value="" disabled>Choose Payment Status</option>
+                   <option value="Paid">Paid</option>
+                   <option value="Unpaid">Cash on Delivery</option>
+                 </select>
+                 <div *ngIf="itemForm.controls['paymentStatus'].invalid && (itemForm.controls['paymentStatus'].dirty || itemForm.controls['paymentStatus'].touched)">
+                   <span class="text-danger small">Please select a payment status.</span>
+                 </div>
+               </div>
+ 
+               <div class="col-md-4">
+                 <label for="shipmentMethod" class="form-label">Shipment Method</label>
+                 <select formControlName="shipmentMethod" [(ngModel)]="formModel.shipmentMethod" class="form-select">
+                   <option value="" disabled>Choose Shipment Method</option>
+                   <option value="Sea">Sea</option>
+                   <option value="Ground">Ground</option>
+                   <option value="Air">Air</option>
+                 </select>
+                 <div *ngIf="itemForm.controls['shipmentMethod'].invalid && (itemForm.controls['shipmentMethod'].dirty || itemForm.controls['shipmentMethod'].touched)">
+                   <span class="text-danger small">Please select a shipment method.</span>
+                 </div>
+               </div>
+ 
+            <div class="col-md-12">
+                  <div class="d-grid">
+                    <button class="btn btn-dark px-4" [disabled]="itemForm.invalid" type="submit">
+                      Submit
+                    </button>
+                    <span class="popuptext" id="submitPopup"></span>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 

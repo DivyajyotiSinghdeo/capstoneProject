@@ -10,6 +10,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./viewcargostatus.component.scss']
 })
 export class ViewcargostatusComponent { 
+  username:any;
   cargo:any = {};  
   showError: boolean = false;  
   errorMessage: string = '';  
@@ -18,7 +19,9 @@ export class ViewcargostatusComponent {
   searchPerformed: boolean = false;  
   showCargoInfo: boolean = false;  
   
-  constructor(public router: Router, public httpService: HttpService, private authService: AuthService) {}  
+  constructor(public router: Router, public httpService: HttpService, private authService: AuthService) {
+    this.username=this.authService.getUsername;
+  }  
   
   search() {    
     this.showError = false;    

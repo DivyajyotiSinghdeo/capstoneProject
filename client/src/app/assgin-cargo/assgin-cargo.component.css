@@ -1,28 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 .card {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 50px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .card-title {
   font-size: 1.25rem;
   font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .card-text {
   font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .btn-primary {
   background-color: #007bff;
   border-color: #007bff;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .btn-primary:hover {
   background-color: #0056b3;
   border-color: #0056b3;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #cards:hover{
     transform: scale(1.01);
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1{
+  font-family: 'Montserrat', sans-serif;
+}
+
+p{
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: #222;
+  padding-left: 10px;
+  padding-top: 4px;
+}
+
+.username-highlight{
+  color:#17a2b8;
+  font-weight: bold;
 }

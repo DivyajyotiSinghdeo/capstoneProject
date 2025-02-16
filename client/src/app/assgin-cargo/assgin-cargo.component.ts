@@ -10,6 +10,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./assgin-cargo.component.css']
 })
 export class AssginCargoComponent {
+  username:any;
   showError:boolean = false;  
   errorMessage: any;  
   cargList: any[] = [];  
@@ -24,6 +25,7 @@ export class AssginCargoComponent {
   constructor(public router: Router, public httpService: HttpService, private authService: AuthService) {}  
   
   ngOnInit(): void {    
+    this.username=this.authService.getUsername;
     const userIdString = this.authService.getId;    
     this.userId = userIdString ? parseInt(userIdString,10):null;
  

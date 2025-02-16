@@ -19,9 +19,11 @@ export class AddcargoComponent{
    responseMessage: any;  
    showMessageBox:boolean=false;  
    minDate:any;     
+   username:any;
    
    constructor(public router:Router, public httpService:HttpService, private formBuilder: FormBuilder, private authService:AuthService)     
    {      
+    this.username=this.authService.getUsername;
     this.itemForm = this.formBuilder.group({        
       content: [this.formModel.username,[ Validators.required]],        
       size: [this.formModel.password,[ Validators.required, Validators.min(1)]],        

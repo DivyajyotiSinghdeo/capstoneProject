@@ -12,6 +12,7 @@ import { AuthService } from '../../services/auth.service';
 })
 
 export class ShipmentsComponent{
+  username:any;
    showError:boolean = false;  
    errorMessage: any;  
    cargList: any = [];  
@@ -23,8 +24,9 @@ export class ShipmentsComponent{
    searchQuery: string = '';  
    selectedStatus: string = '';  
    
-   constructor(public router: Router, public httpService: HttpService) {}  
+   constructor(public router: Router, public httpService: HttpService,private authService:AuthService) {}  
    ngOnInit(): void {   
+    this.username=this.authService.getUsername;
      this.getCargo();    
      this.getDrivers();    
      this.assignModel.driverId = null;  

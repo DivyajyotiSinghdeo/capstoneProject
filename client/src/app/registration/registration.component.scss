@@ -1,278 +1,4 @@
-// body, html {
-//     margin: 0;
-//     padding: 0;
-//     width: 100%;
-//     height: 100%;
-//     font-family: Arial, sans-serif;
-//     background-color: #e0e0e0;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     flex-direction: column; /* Ensure vertical alignment */
-// }
-
-// .wrapper {
-//     background: white;
-//     padding: 1.5rem; /* Reduced padding */
-//     border-radius: 10px;
-//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-//     max-width: 400px;
-//     width: 100%;
-//     text-align: center;
-//     margin-top: 20px; /* Reduced margin from the top */
-//     margin-bottom: 20px; /* Reduced margin from the bottom */
-// }
-
-// h5 {
-//     margin-bottom: 1rem; /* Reduced margin */
-//     color: #333;
-// }
-
-// .input-box {
-//     position: relative;
-//     margin-bottom: 1rem; /* Reduced margin */
-// }
-
-// .input-box input,
-// .input-box select {
-//     width: 100%;
-//     padding: 0.5rem 0.75rem; /* Reduced padding */
-//     border: 1px solid #ccc;
-//     border-radius: 5px;
-//     font-size: 1rem;
-// }
-
-// .input-box i {
-//     position: absolute;
-//     top: 50%;
-//     right: 1rem;
-//     transform: translateY(-50%);
-//     color: #aaa;
-// }
-
-// .input-box .ng-dirty {
-//     margin-top: 0.5rem;
-//     text-align: left;
-// }
-
-// .btn {
-//     width: 100%;
-//     padding: 0.5rem; /* Reduced padding */
-//     border: none;
-//     border-radius: 5px;
-//     background-color: #007bff;
-//     color: #fff;
-//     font-size: 1rem;
-//     cursor: pointer;
-//     transition: background-color 0.3s;
-// }
-
-// .btn:hover {
-//     background-color: #0056b3;
-// }
-
-// .register-link {
-//     margin-top: 0.5rem; /* Reduced margin */
-// }
-
-// .register-link a {
-//     color: #007bff;
-//     text-decoration: none;
-// }
-
-// .register-link a:hover {
-//     text-decoration: underline;
-// }
-
-// .alert {
-//     margin-top: 0.5rem; /* Reduced margin */
-//     padding: 0.5rem 0.75rem; /* Reduced padding */
-//     border-radius: 5px;
-//     background-color: #f8d7da;
-//     color: #721c24;
-//     border: 1px solid #f5c6cb;
-// }
-
-// .alert-success {
-//     background-color: #d4edda;
-//     color: #155724;
-//     border: 1px solid #c3e6cb;
-// }
-
-// .alert-danger {
-//     background-color: #f8d7da;
-//     color: #721c24;
-//     border: 1px solid #f5c6cb;
-// }
-
-// /* Navbar and Footer Spacing */
-// .navbar {
-//     margin-bottom: 20px; /* Reduced margin */
-// }
-
-// footer {
-//     margin-top: 20px; /* Reduced margin */
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-// .alert{
-//   padding: 0.5rem;
-// }
-
-// *{
-//   margin: 0;
-//   padding: 0;
-//   box-sizing: border-box;
-//   font-family: "Poppins", sans-serif;
-// }
-
-// body {
-//   min-height: 100vh;
-//   display: flex;
-//   justify-content: flex-end;
-//   align-items: center;
-// }
-
-// .container-c {
-//   position: relative;
-//   width: 100%;
-//   height: 100vh;
-//   overflow: hidden;
-//   background-color: rgba(0, 0, 0, .4);
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   padding-top: 80px;
-//   padding-bottom: 100px;
-// }
-// .video-loaded .background-clip {
-//   background-color: transparent; /* Fade out the fallback color when video is loaded */
-// }
-// .background-clip {
-//   background-color: rgb(0, 60, 72);
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover;
-//   // z-index: -1;
-//   transition: background-color 1s ease;
-// }
-
-// .wrapper {
-//   width: 420px;
-//   background: transparent;
-//   border: 2px solid rgba(255, 255, 255, .2);
-//   backdrop-filter: blur(9px);
-//   color: #fff;
-//   border-radius: 12px;
-//   padding: 30px 40px;
-//   margin-right: 1rem;
-// }
-
-// .wrapper h1 {
-//   font-size: 36px;
-//   text-align: center;
-// }
-
-// .wrapper .input-box {
-//   position: relative;
-//   width: 100%;
-//   height: 50px;
-//   margin: 30px 0;
-// }
-
-// .input-box input {
-//   width: 100%;
-//   height: 100%;
-//   background: transparent;
-//   border: none;
-//   outline: none;
-//   border: 2px solid rgba(255, 255, 255, .2);
-//   border-radius: 40px;
-//   font-size: 16px;
-//   color: #fff;
-//   padding: 20px 45px 20px 20px;
-// }
-
-// .input-box input::placeholder {
-//   color: #fff;
-// }
-
-// .input-box i {
-//   position: absolute;
-//   right: 20px;
-//   top: 30%;
-//   transform: translate(-50%);
-//   font-size: 20px;
-// }
-
-// .wrapper .remember-forgot {
-//   display: flex;
-//   justify-content: space-between;
-//   font-size: 14.5px;
-//   margin: -15px 0 15px;
-// }
-
-// .remember-forgot label input {
-//   accent-color: #fff;
-//   margin-right: 3px;
-// }
-
-// .remember-forgot a {
-//   color: #fff;
-//   text-decoration: none;
-// }
-
-// .remember-forgot a:hover {
-//   text-decoration: underline;
-// }
-
-// .wrapper .btn {
-//   width: 100%;
-//   height: 45px;
-//   background: #fff;
-//   border: none;
-//   outline: none;
-//   border-radius: 40px;
-//   box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-//   cursor: pointer;
-//   font-size: 16px;
-//   color: #333;
-//   font-weight: 600;
-// }
-
-// .wrapper .register-link {
-//   font-size: 14.5px;
-//   text-align: center;
-//   margin: 20px 0 15px;
-// }
-
-// .register-link p a {
-//   color: #fff;
-//   text-decoration: none;
-//   font-weight: 600;
-// }
-
-// .register-link p a:hover {
-//   text-decoration: underline;
-// }
-
-
-
-
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 .alert {
   padding: 0.5rem;
 }
@@ -281,7 +7,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -289,6 +15,7 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .container-c {
@@ -296,17 +23,20 @@ body {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background-color: rgba(0, 0, 0, .4);
+  background-color: rgba(0, 0, 0, 0.377);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 290px;
-  padding-bottom: 290px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  font-family: 'Montserrat', sans-serif;
 
 }
 
+
 .video-loaded .background-clip {
   background-color: transparent; /* Fade out the fallback color when video is loaded */
+  font-family: 'Montserrat', sans-serif;
 }
 
 .background-clip {
@@ -318,33 +48,41 @@ body {
   height: 100%;
   object-fit: cover;
   transition: background-color 1s ease;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .wrapper {
-  width: 420px;
+  width: 400px;
+  //background-color: rgba(0,0,0,0.5);
   background: transparent;
+  opacity: 100%;
   border: 2px solid rgba(255, 255, 255, .2);
   backdrop-filter: blur(9px);
-  color: #fff;
+  color: #ffffff;
   border-radius: 12px;
-  padding: 20px 40px;
+  padding: 10px 20px;
   margin-right: 1rem;
-
+  //background: transparent;
+  backdrop-filter: blur(9px);
+  font-family: 'Montserrat', sans-serif;
 }
 
 .wrapper h1 {
-  font-size: 36px;
+  margin-top: 5px;
+  font-size: 30px;
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .wrapper .input-box {
   position: relative;
   width: 100%;
   height: 50px;
-  margin: 30px 0;
+  margin: 20px 0;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.input-box input {
+.input-box input{
   width: 100%;
   height: 100%;
   background: transparent;
@@ -355,10 +93,12 @@ body {
   font-size: 16px;
   color: #fff;
   padding: 20px 45px 20px 20px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .input-box input::placeholder {
   color: #fff;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .input-box i {
@@ -367,6 +107,7 @@ body {
   top: 30%;
   transform: translate(-50%);
   font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .wrapper .btn {
@@ -381,20 +122,46 @@ body {
   font-size: 16px;
   color: #333;
   font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .wrapper .register-link {
   font-size: 14.5px;
   text-align: center;
-  margin: 20px 0 15px;
+  margin: 20px 0 0px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .register-link p a {
   color: #fff;
   text-decoration: none;
   font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .register-link p a:hover {
   text-decoration: underline;
+  font-family: 'Montserrat', sans-serif;
 }
+.wrapper .input-box select {
+  width: 100%;
+  height: 100%;
+  background: transparent ;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  font-size: 16px;
+  padding-left: 15px;
+  color: #fff; /* White text color */
+  appearance: none; /* Remove default arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper .input-box select option {
+  background: #000 !important;
+  color: #fff !important; 
+  font-family: 'Montserrat', sans-serif;
+}
+

@@ -1,61 +1,73 @@
-
-.main-content{
-  padding-top: 50px;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+.main-content {
+  /* padding-top: 10px; */
   padding-bottom: 100px;
-  
+  font-family: 'Montserrat', sans-serif;
 }
 
-.popup {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
+.headings{
+  font-family: 'Montserrat', sans-serif;
 }
-.card-header{
-  background-color: #36454f;
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Montserrat', sans-serif;
 }
+
+.card-header {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.form-control, .form-select {
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  transition: 0.3s ease-in-out;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #36454f;
+  box-shadow: 0 0 8px rgba(54, 69, 79, 0.3);
+  font-family: 'Montserrat', sans-serif;
+}
+
 .btn {
-  background-color: #36454f;
+  font-size: 18px;
+  padding: 10px 25px;
+  transition: 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+
 }
 
-.popup .popuptext {
-  visibility: hidden;
-  width: 160px;
-  background-color: #4CAF50; 
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px 0;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -80px;
+.btn:hover {
+  background: #17a2b8;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.popup .popuptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #4CAF50 transparent transparent transparent; 
+.text-danger {
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.popup .show {
-  visibility: visible;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s;
+h1{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: #222;
+  padding-left: 10px;
+  padding-top: 4px;
+}
+
+.username-highlight{
+  color:#17a2b8;
+  font-weight: bold;
 }
 
 
-@-webkit-keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}

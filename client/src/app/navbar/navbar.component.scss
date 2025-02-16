@@ -1,38 +1,46 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 .navbar {
     background-color: #26292c; /* Dark gray color */
     padding: 0.5rem 1rem; /* Increased padding for better spacing */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    font-family: 'Montserrat', sans-serif;
 }
 
 .navbar-brand {
     font-size: 1.5rem; /* Larger font size for brand */
     font-weight: bold; /* Bold font for brand */
     color: #f8f9fa; /* Light color for brand */
+    font-family: 'Montserrat', sans-serif;
 }
 
 .logo-black {
     color: #f8f9fa; /* Light color for logo part */
+    font-family: 'Montserrat', sans-serif;
 }
 
 .logo-blue {
     color: #17a2b8; /* Teal color for logo part */
+    font-family: 'Montserrat', sans-serif;
 }
 
 .navbar-toggler {
     border: none; /* Remove border */
+    font-family: 'Montserrat', sans-serif;
 }
 
 .navbar-collapse {
     justify-content: space-between; /* Space between logo and nav items */
+    font-family: 'Montserrat', sans-serif;
 }
 
 .navbar-nav {
     align-items: center; /* Center align nav items */
+    font-family: 'Montserrat', sans-serif;
 }
 
 .nav-item {
     margin-left: 1rem; /* Increased spacing between nav items */
+    font-family: 'Montserrat', sans-serif;
     
 }
 
@@ -42,6 +50,7 @@
     margin: 0 1rem;
     transition: color 0.3s, transform 0.3s; /* Smooth transition for color and transform */
     display: inline-block; /* Display links inline */
+    font-family: 'Montserrat', sans-serif;
 }
 
 .nav-link:hover {
@@ -51,6 +60,7 @@
 
 .nav-link.active {
     color: #17a2b8; /* Teal color for active link */
+    font-family: 'Montserrat', sans-serif;
 }
 
 .Btn {
@@ -62,20 +72,24 @@
     cursor: pointer; /* Pointer cursor on hover */
     transition: background-color 0.3s, transform 0.3s; /* Smooth transition for background color and transform */
     margin-right: 1rem; /* Add margin between buttons */
+    font-family: 'Montserrat', sans-serif;
 
 }
 
 .Btn:last-child {
     margin-right: 0; /* Remove margin from the last button */
+    font-family: 'Montserrat', sans-serif;
 }
 
 .Btn-spacing {
     margin-right: 1rem; /* Add margin between buttons */
+    font-family: 'Montserrat', sans-serif;
 }
 
 .Btn:hover {
     background-color: #138496; /* Darker teal on hover */
     transform: scale(1.05); /* Slightly enlarge on hover */
+    font-family: 'Montserrat', sans-serif;
     
 }
 
@@ -88,20 +102,24 @@
     .navbar-nav {
         flex-direction: column; /* Stack nav items vertically */
         width: 100%; /* Full width */
+        font-family: 'Montserrat', sans-serif;
     }
 
     .nav-item {
         margin-left: 0; /* Remove left margin */
         margin-bottom: 1rem; /* Add bottom margin */
+        font-family: 'Montserrat', sans-serif;
     }
 
     .nav-link {
         text-align: center; /* Center align text */
         align-items: center;
+        font-family: 'Montserrat', sans-serif;
     }
 
     .Btn-spacing {
         margin-bottom: 1rem; /* Add bottom margin for buttons on smaller screens */
+        font-family: 'Montserrat', sans-serif;
     }
 }
 
