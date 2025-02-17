@@ -1,6 +1,5 @@
 <h1 class="hii">Welcome, <span class="username-highlight">{{username}}</span>!</h1>
 <h1 class="stats"><b>Cargo Status</b></h1>
-<!-- Search Bar -->
 <div class="container search-bar-container mt-3">
   <div class="search-bar">
     <div class="input-group">
@@ -12,7 +11,7 @@
   </div>
 </div>
 
-<!-- Card View (displayed only after search) -->
+
 <div class="container mt-3 main-content" *ngIf="searchPerformed">
   <div *ngIf="showCargoInfo; else errorTemplate">
     <div class="d-flex justify-content-center">
@@ -37,27 +36,3 @@
   </ng-template>
 </div>
 <div class="empty"></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

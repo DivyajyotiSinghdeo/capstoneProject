@@ -5,7 +5,6 @@ import com.wecp.logisticsmanagementandtrackingsystem.entity.Cargo;
 import com.wecp.logisticsmanagementandtrackingsystem.entity.Driver;
 import com.wecp.logisticsmanagementandtrackingsystem.repository.BusinessRepository;
 import com.wecp.logisticsmanagementandtrackingsystem.repository.CargoRepository;
-import com.wecp.logisticsmanagementandtrackingsystem.repository.CustomerRepository;
 import com.wecp.logisticsmanagementandtrackingsystem.repository.DriverRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -27,8 +26,6 @@ public class CargoService {
     @Autowired
     private BusinessRepository businessRepository;
 
-    @Autowired
-    private CustomerRepository customerRepository;
 
     public Cargo addCargo(Cargo cargo) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

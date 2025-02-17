@@ -35,7 +35,7 @@ body {
 
 
 .video-loaded .background-clip {
-  background-color: transparent; /* Fade out the fallback color when video is loaded */
+  background-color: transparent; 
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -53,7 +53,6 @@ body {
 
 .wrapper {
   width: 400px;
-  //background-color: rgba(0,0,0,0.5);
   background: transparent;
   opacity: 100%;
   border: 2px solid rgba(255, 255, 255, .2);
@@ -62,7 +61,6 @@ body {
   border-radius: 12px;
   padding: 10px 20px;
   margin-right: 1rem;
-  //background: transparent;
   backdrop-filter: blur(9px);
   font-family: 'Montserrat', sans-serif;
 }
@@ -151,8 +149,8 @@ body {
   border-radius: 40px;
   font-size: 16px;
   padding-left: 15px;
-  color: #fff; /* White text color */
-  appearance: none; /* Remove default arrow */
+  color: #fff;
+  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   cursor: pointer;

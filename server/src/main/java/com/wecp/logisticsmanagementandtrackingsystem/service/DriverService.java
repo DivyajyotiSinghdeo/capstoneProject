@@ -4,7 +4,6 @@ import com.wecp.logisticsmanagementandtrackingsystem.entity.Cargo;
 import com.wecp.logisticsmanagementandtrackingsystem.entity.Driver;
 import com.wecp.logisticsmanagementandtrackingsystem.repository.CargoRepository;
 import com.wecp.logisticsmanagementandtrackingsystem.repository.DriverRepository;
-import com.wecp.logisticsmanagementandtrackingsystem.repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,9 +16,6 @@ public class DriverService {
 
     @Autowired
     private DriverRepository driverRepository;
-
-    @Autowired
-    private UserRepository userRepository;
 
     @Autowired
     private CargoRepository cargoRepository;

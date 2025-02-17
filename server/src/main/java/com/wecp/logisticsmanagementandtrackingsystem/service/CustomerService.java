@@ -39,7 +39,6 @@ public class CustomerService {
                 .orElse(null);
 
         if (cargo != null) {
-            // Create a response object with cargo status details
             return cargo;
         } else {
             return null;
